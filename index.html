@@ -784,60 +784,60 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
     <div class="login-card">
       <div class="login-logo">
         <div class="logo-icon"><img src="icon-512.png" alt="SmileBridge" style="width: 120px; height: 120px;"></div>
-        <h1>سمايل بريدج</h1>
-        <p>SmileBridge — منصة تقويم الأسنان الذكية</p>
+        <h1 id="loginTitle">سمايل بريدج</h1>
+        <p id="loginSubtitle">SmileBridge — منصة تقويم الأسنان الذكية</p>
       </div>
 
       <div class="login-tabs">
-        <div class="login-tab active" data-tab="login" onclick="switchLoginTab('login')">تسجيل الدخول</div>
-        <div class="login-tab" data-tab="register" onclick="switchLoginTab('register')">حساب جديد</div>
+        <div class="login-tab active" data-tab="login" onclick="switchLoginTab('login')" id="tabLogin">تسجيل الدخول</div>
+        <div class="login-tab" data-tab="register" onclick="switchLoginTab('register')" id="tabRegister">حساب جديد</div>
       </div>
 
       <!-- Role Selector -->
       <div class="role-selector">
         <div class="role-btn active" data-role="patient" onclick="selectRole('patient')">
           <div class="role-icon">🦷</div>
-          <div class="role-label">مريض</div>
+          <div class="role-label" id="rolePatient">مريض</div>
         </div>
         <div class="role-btn" data-role="doctor" onclick="selectRole('doctor')">
           <div class="role-icon">👨‍⚕️</div>
-          <div class="role-label">طبيب</div>
+          <div class="role-label" id="roleDoctor">طبيب</div>
         </div>
         <div class="role-btn" data-role="admin" onclick="selectRole('admin')">
           <div class="role-icon">🛡️</div>
-          <div class="role-label">أدمن</div>
+          <div class="role-label" id="roleAdmin">أدمن</div>
         </div>
       </div>
 
       <div id="loginForm">
         <div class="form-group">
-          <label class="form-label">البريد الإلكتروني</label>
+          <label class="form-label" id="lblEmail">البريد الإلكتروني</label>
           <input type="email" class="form-input" placeholder="example@email.com" id="loginEmail" autocomplete="email">
         </div>
         <div class="form-group">
-          <label class="form-label">كلمة المرور</label>
+          <label class="form-label" id="lblPassword">كلمة المرور</label>
           <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" autocomplete="current-password">
         </div>
         <div style="text-align: start; margin-bottom: 16px;">
-          <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;">نسيت كلمة المرور؟ 🔑</a>
+          <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;" id="lblForgot">نسيت كلمة المرور؟ 🔑</a>
         </div>
-        <button class="btn btn-primary" onclick="handleLogin()">تسجيل الدخول ✨</button>
+        <button class="btn btn-primary" onclick="handleLogin()" id="lblLoginBtn">تسجيل الدخول ✨</button>
       </div>
 
       <!-- Forgot Password Form -->
       <div id="forgotForm" class="hidden">
         <div style="text-align: center; margin-bottom: 24px;">
           <div style="font-size: 48px; margin-bottom: 8px;">🔐</div>
-          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;">استعادة كلمة المرور</h3>
-          <p style="color: rgba(255,255,255,0.5); font-size: 13px;">أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين</p>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblForgotTitle">استعادة كلمة المرور</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblForgotDesc">أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين</p>
         </div>
         <div class="form-group">
-          <label class="form-label">البريد الإلكتروني</label>
+          <label class="form-label" id="lblEmail2">البريد الإلكتروني</label>
           <input type="email" class="form-input" placeholder="example@email.com" id="forgotEmail" autocomplete="email">
         </div>
-        <button class="btn btn-primary" onclick="handleForgotPassword()">إرسال رابط الاستعادة 📧</button>
+        <button class="btn btn-primary" onclick="handleForgotPassword()" id="lblSendReset">إرسال رابط الاستعادة 📧</button>
         <div style="text-align: center; margin-top: 16px;">
-          <a href="#" onclick="switchLoginTab('login'); return false;" style="color: rgba(255,255,255,0.5); font-size: 13px;">العودة لتسجيل الدخول ←</a>
+          <a href="#" onclick="switchLoginTab('login'); return false;" style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblBackLogin">العودة لتسجيل الدخول ←</a>
         </div>
       </div>
 
@@ -845,18 +845,18 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       <div id="resetForm" class="hidden">
         <div style="text-align: center; margin-bottom: 24px;">
           <div style="font-size: 48px; margin-bottom: 8px;">🔑</div>
-          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;">تعيين كلمة مرور جديدة</h3>
-          <p style="color: rgba(255,255,255,0.5); font-size: 13px;">أدخل كلمة المرور الجديدة</p>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblResetTitle">تعيين كلمة مرور جديدة</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblResetDesc">أدخل كلمة المرور الجديدة</p>
         </div>
         <div class="form-group">
-          <label class="form-label">كلمة المرور الجديدة</label>
+          <label class="form-label" id="lblNewPass">كلمة المرور الجديدة</label>
           <input type="password" class="form-input" placeholder="••••••••" id="newPassword" autocomplete="new-password">
         </div>
         <div class="form-group">
-          <label class="form-label">تأكيد كلمة المرور</label>
+          <label class="form-label" id="lblConfirmPass">تأكيد كلمة المرور</label>
           <input type="password" class="form-input" placeholder="••••••••" id="confirmPassword" autocomplete="new-password">
         </div>
-        <button class="btn btn-primary" onclick="handleResetPassword()">تعيين كلمة المرور ✅</button>
+        <button class="btn btn-primary" onclick="handleResetPassword()" id="lblSetPass">تعيين كلمة المرور ✅</button>
       </div>
 
       <div id="registerForm" class="hidden">
@@ -1086,7 +1086,7 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <div class="modal-overlay" id="disclaimerModal" style="z-index: 3000;">
   <div class="modal" style="max-width: 520px;">
     <div class="modal-header">
-      <h3 class="modal-title">⚠️ إخلاء المسؤولية الطبية</h3>
+      <h3 class="modal-title" id="lblDisclaimerTitle">⚠️ إخلاء المسؤولية الطبية</h3>
     </div>
     <div class="modal-body" style="line-height: 2;">
       <p style="margin-bottom: 12px;"><strong>Medical Disclaimer</strong></p>
@@ -1102,7 +1102,7 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-primary" onclick="acceptDisclaimer()">أوافق وأفهم ✅</button>
+      <button class="btn btn-primary" onclick="acceptDisclaimer()" id="lblAgreeBtn">أوافق وأفهم ✅</button>
     </div>
   </div>
 </div>
@@ -1111,8 +1111,8 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 2500; background: var(--bg-card); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); padding: 20px 24px; display: none;">
   <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
     <div style="flex: 1; min-width: 300px;">
-      <strong style="font-size: 15px;">🍪 نستخدم ملفات تعريف الارتباط</strong>
-      <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+      <strong style="font-size: 15px;" id="lblCookieTitle">🍪 نستخدم ملفات تعريف الارتباط</strong>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;" id="lblCookieText">
         نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على 
         <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: var(--primary);">سياسة الخصوصية</a> الخاصة بنا.
       </p>
@@ -1214,6 +1214,515 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <div class="toast-container" id="toastContainer"></div>
 
 <script>
+// ==================== INTERNATIONALIZATION ====================
+const translations = {
+  ar: {
+    // Login
+    loginTitle: 'سمايل بريدج',
+    loginSubtitle: 'SmileBridge — منصة تقويم الأسنان الذكية',
+    loginTab: 'تسجيل الدخول',
+    registerTab: 'حساب جديد',
+    email: 'البريد الإلكتروني',
+    password: 'كلمة المرور',
+    forgotPassword: 'نسيت كلمة المرور؟ 🔑',
+    loginBtn: 'تسجيل الدخول ✨',
+    // Roles
+    patient: 'مريض',
+    doctor: 'طبيب',
+    admin: 'أدمن',
+    // Register
+    fullName: 'الاسم الكامل',
+    specialty: 'التخصص',
+    createAccount: 'إنشاء الحساب 🚀',
+    // Forgot
+    forgotTitle: 'استعادة كلمة المرور',
+    forgotDesc: 'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين',
+    sendReset: 'إرسال رابط الاستعادة 📧',
+    backToLogin: 'العودة لتسجيل الدخول ←',
+    // Reset
+    resetTitle: 'تعيين كلمة مرور جديدة',
+    resetDesc: 'أدخل كلمة المرور الجديدة',
+    newPassword: 'كلمة المرور الجديدة',
+    confirmPassword: 'تأكيد كلمة المرور',
+    setNewPassword: 'تعيين كلمة المرور ✅',
+    // Sidebar
+    dashboard: 'لوحة التحكم',
+    myCases: 'حالاتي',
+    uploadPhotos: 'رفع صور',
+    offers: 'العروض المقدمة',
+    messages: 'الرسائل',
+    history: 'سجل الحالات',
+    browseCases: 'تصفح الحالات',
+    myOffers: 'عروضي',
+    accepted: 'الحالات المقبولة',
+    ratings: 'التقييمات',
+    users: 'إدارة المستخدمين',
+    casesMgmt: 'إدارة الحالات',
+    adMgmt: 'الإعلانات',
+    reports: 'التقارير',
+    settings: 'إعدادات النظام',
+    // Nav sections
+    navMain: 'رئيسي',
+    navServices: 'الخدمات',
+    navSystem: 'النظام',
+    // Header
+    search: 'بحث...',
+    notifications: 'الإشعارات',
+    // Dashboard
+    activeCases: 'حالاتي النشطة',
+    receivedOffers: 'عروض مستلمة',
+    unreadMessages: 'رسائل غير مقروءة',
+    myDoctorRating: 'تقييم طبيبي',
+    newThisWeek: '↑ حالة جديدة هذا الأسبوع',
+    newOffers: '↑ 3 عروض جديدة',
+    currentCases: 'حالاتي الحالية',
+    latestOffers: 'آخر العروض',
+    viewAll: 'عرض الكل',
+    uploadNewCase: '📸 رفع حالة جديدة',
+    // Cases
+    all: 'الكل',
+    active: 'نشطة',
+    inProgress: 'قيد العلاج',
+    completed: 'مكتملة',
+    new: 'جديدة',
+    offersCount: 'عروض',
+    viewOffers: 'عرض العروض',
+    submitOffer: 'تقديم عرض',
+    // Upload
+    photoGuide: '📸 دليل التقاط الصور',
+    photoGuideDesc: 'التقط 6 صور بالزوايا المحددة أدناه للحصول على أفضل تقييم من الأطباء',
+    photoSlots: ['الابتسامة الأمامية الكاملة', 'الجانب الأيمن — إطباق جانبي', 'الجانب الأيسر — إطباق جانبي', 'الفك العلوي من الأعلى', 'الفك السفلي من الأسفل', 'الأمام مع فتح الفم'],
+    caseDescription: 'وصف الحالة (اختياري)',
+    casePlaceholder: 'صف مشكلتك بإيجاز... أي تفاصيل تساعد الطبيب على فهم حالتك بشكل أفضل',
+    submitCaseBtn: 'إرسال الحالة للمراجعة 🚀',
+    saveDraft: 'حفظ كمسودة',
+    uploadSuccess: 'تم رفع الصورة بنجاح! ✓',
+    caseSubmitted: 'تم إرسال الحالة بنجاح! سيتم إشعار الأطباء المتخصصين 🎉',
+    // Offers page
+    offersReceived: 'عروض من أطباء متخصصين',
+    sortByPrice: 'السعر',
+    sortByRating: 'التقييم',
+    sortByDuration: 'المدة',
+    bestPrice: '✅ الأفضل سعراً',
+    selectDoctor: 'اختيار الطبيب',
+    doctorSelected: (name) => `تم اختيار ${name} بنجاح! 🎉 سيتم التواصل معك قريباً`,
+    // Offer details
+    riyal: 'ريال',
+    month: 'شهر',
+    months: 'أشهر',
+    experience: 'سنوات خبرة',
+    review: 'تقييم',
+    reviews: 'تقييمات',
+    // Messages
+    searchConversations: 'بحث في المحادثات...',
+    online: 'متصل الآن',
+    typeMessage: 'اكتب رسالتك...',
+    // Doctor
+    availableCases: 'حالات متاحة',
+    newToday: '↑ 4 جديدة اليوم',
+    submittedOffers: 'عروضي المقدمة',
+    myAcceptedCases: 'حالات مقبولة',
+    thisMonth: '↑ 2 هذا الشهر',
+    avgRating: 'متوسط التقييم',
+    ratingCount: (n) => `من ${n} تقييم`,
+    newCases: 'حالات جديدة متاحة',
+    allAvailable: (n) => `الكل (${n})`,
+    newFilter: 'جديدة',
+    complex: 'معقدة',
+    urgent: 'عاجلة',
+    crowding: 'ازدحام',
+    overlay: 'تراكب',
+    pending: 'قيد الانتظار',
+    acceptedOffer: 'مقبول ✓',
+    rejected: 'مرفوض',
+    patientCase: 'حالة',
+    // Submit offer modal
+    submitOfferTitle: (id) => `تقديم عرض للحالة #${id}`,
+    priceRiyal: 'السعر (ريال)',
+    pricePlaceholder: 'مثال: 3500',
+    durationMonths: 'مدة العلاج المتوقعة (بالأشهر)',
+    durationPlaceholder: 'مثال: 12',
+    additionalNote: 'ملاحظة إضافية (اختياري)',
+    notePlaceholder: 'أضف تفاصيل عن خطة العلاج المقترحة...',
+    sendOffer: 'إرسال العرض 🚀',
+    cancel: 'إلغاء',
+    offerSent: 'تم إرسال العرض بنجاح! ✅',
+    // Ratings
+    basedOn: (n) => `بناءً على ${n} تقييم`,
+    // Admin
+    totalUsers: 'إجمالي المستخدمين',
+    registeredDoctors: 'طبيب مسجّل',
+    totalCases: 'إجمالي الحالات',
+    adRevenue: 'إيرادات الإعلانات',
+    growthThisMonth: '↑ 12% هذا الشهر',
+    newDoctors: '↑ 18 جدد',
+    thisWeek: '↑ 45 هذا الأسبوع',
+    adRevenueThisMonth: '↑ 8% هذا الشهر',
+    userGrowth: 'نمو المستخدمين (آخر 6 أشهر)',
+    recentActivity: 'آخر النشاطات',
+    months_ar: ['سبت', 'أكت', 'نوف', 'ديس', 'ينا', 'فبر'],
+    // Users table
+    user: 'المستخدم',
+    emailCol: 'البريد',
+    role: 'الدور',
+    status: 'الحالة',
+    joinDate: 'تاريخ التسجيل',
+    actions: 'إجراءات',
+    edit: 'تعديل',
+    block: 'حظر',
+    activeStatus: 'نشط',
+    pendingStatus: 'قيد المراجعة',
+    // Cases management
+    caseNumber: 'رقم',
+    patientCol: 'المريض',
+    description: 'الوصف',
+    offersCol: 'العروض',
+    statusCol: 'الحالة',
+    details: 'تفاصيل',
+    reported: 'مبلغ عنها',
+    // Ads
+    adsenseSettings: 'إعدادات Google AdSense',
+    publisherId: 'كود AdSense Publisher ID',
+    topBannerSlot: 'إعلان الشريط العلوي (Slot ID)',
+    bottomBannerSlot: 'إعلان الشريط السفلي (Slot ID)',
+    sidebarSlot: 'إعلان الجانبي (Slot ID)',
+    saveSettings: 'حفظ الإعدادات',
+    featuredDoctors: 'إعلانات الأطباء المميزة (مستقبلي)',
+    featuredDesc: 'هذه الميزة ستُفعّل لاحقاً، وتتيح للأطباء شراء مساحة إعلانية مميزة داخل التطبيق.',
+    bronze: 'باقة برونزية',
+    silver: 'باقة فضية',
+    gold: 'باقة ذهبية',
+    perMonth: '/شهر',
+    bronzeDesc: 'ظهور في القائمة',
+    silverDesc: 'بانر مميز + أولوية',
+    goldDesc: 'أولوية قصوى + بروفايل مميز',
+    // Reports
+    completedCases: 'حالات مكتملة',
+    totalRevenue: 'إجمالي الإيرادات',
+    completionRate: 'نسبة الإكمال',
+    monthlyReport: 'تقرير شهري — أبريل 2026',
+    monthCol: 'الشهر',
+    newCasesCol: 'حالات جديدة',
+    offersSubmitted: 'عروض مقدمة',
+    completedCol: 'حالات مكتملة',
+    revenue: 'إيرادات',
+    // Settings
+    generalSettings: 'إعدادات عامة',
+    appName: 'اسم التطبيق',
+    supportEmail: 'البريد الإلكتروني للدعم',
+    defaultLang: 'اللغة الافتراضية',
+    arabicDefault: 'العربية (افتراضي)',
+    english: 'English',
+    bilingual: 'ثنائي اللغة (عربي/إنجليزي)',
+    securitySettings: 'إعدادات الأمان',
+    maxImageSize: 'الحد الأقصى لحجم الصورة (MB)',
+    autoReviewDoctors: 'مراجعة الأطباء الجدد تلقائياً',
+    autoAccept: 'نعم — قبول تلقائي',
+    manualReview: 'لا — يتطلب مراجعة يدوية',
+    save: 'حفظ',
+    // Data management
+    dataManagement: '🗑️ إدارة البيانات والحسابات',
+    dataManagementDesc: 'وفقاً لسياسات Google Play و App Store، يحق للمستخدمين طلب حذف بياناتهم.',
+    exportData: '📥 تصدير بياناتي',
+    deleteAccount: '🗑️ طلب حذف الحساب',
+    // Delete modal
+    deleteWarning: '⚠️ تحذير: هذا الإجراء نهائي ولا يمكن التراجع عنه',
+    deleteWhat: 'سيتم حذف ما يلي:',
+    deleteList: ['معلومات حسابك الشخصية', 'جميع صور الأسنان المرفوعة', 'سجل العروض والرسائل', 'التقييمات التي قدمتها'],
+    deleteTime: '⏱️ سيتم إتمام الحذف خلال 30 يوماً من الطلب. يمكنك التواصل معنا على support@smilebridge.com خلال هذه الفترة.',
+    confirmDelete: 'تأكيد الحذف 🗑️',
+    deleteRequested: 'تم استلام طلب حذف حسابك. سيتم الحذف خلال 30 يوماً.',
+    exportSuccess: 'تم تصدير بياناتك بنجاح 📥',
+    // Empty states
+    noPreviousCases: 'لا توجد حالات سابقة',
+    noPreviousCasesDesc: 'عند إكمال أي حالة علاجية، ستظهر هنا مع إمكانية تقييم الطبيب',
+    // Disclaimer
+    disclaimerTitle: '⚠️ إخلاء المسؤولية الطبية',
+    disclaimerPoints: [
+      'هذه المنصة هي أداة وساطة فقط لربط المرضى بالأطباء المتخصصين في تقويم الأسنان.',
+      'التشخيصات والعروض المقدمة عبر المنصة هي تشخيصات أولية وليست بديلاً عن الفحص السريري المباشر.',
+      'يجب على المريض استشارة الطبيب المختص شخصياً قبل اتخاذ أي قرار علاجي.',
+      'اللا تقدم نصائح طبية ولا تتحمل مسؤولية نتائج العلاج.',
+      'صور الأسنان المرفوعة تُستخدم فقط لأغراض التقييم الأولي من قبل أطباء مسجلين.'
+    ],
+    emergencyNote: '⚠️ إذا كنت تعاني من حالة طبية طارئة، يرجى التوجه لأقرب مركز طبي أو الاتصال بالطوارئ.',
+    agreeBtn: 'أوافق وأفهم ✅',
+    // Cookies
+    cookieTitle: '🍪 نستخدم ملفات تعريف الارتباط',
+    cookieText: 'نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على سياسة الخصوصية الخاصة بنا.',
+    privacyPolicy: 'سياسة الخصوصية',
+    reject: 'رفض',
+    acceptAll: 'قبول الكل ✅',
+    // Footer links
+    aboutUs: 'من نحن',
+    privacy: 'سياسة الخصوصية',
+    terms: 'سياسة الاستخدام',
+    allRights: '© 2026 SmileBridge — جميع الحقوق محفوظة',
+    // Ads
+    adLabel: 'إعلان',
+    adSupport: 'Google AdSense — يتم عرض إعلانات لدعم المنصة',
+    adSponsored: 'إعلان ممول',
+    // Welcome
+    welcome: (name) => `مرحباً ${name}! 👋`,
+    // Chat reviews
+    chatReviews: [
+      'دكتور ممتاز ومحترف، النتيجة فاقت توقعاتي!',
+      'تعامل راقي ومتابعة مستمرة، أنصح به بشدة',
+      'نتائج جيدة لكن المواعيد كانت متأخرة أحياناً',
+      'أفضل طبيب تقويم تعاملت معه، صبور ومتفهم',
+      'عمل احترافي وسعر مناسب، شكراً دكتور فيصل'
+    ],
+    timeAgo: ['منذ يوم', 'منذ 3 أيام', 'منذ أسبوع', 'منذ أسبوعين', 'منذ شهر'],
+    // Activity
+    activityItems: [
+      { icon: '👤', text: 'انضم طبيب جديد: د. خالد العمري', time: 'منذ 10 دقائق' },
+      { icon: '📋', text: 'تم نشر حالة جديدة من سارة م.', time: 'منذ 25 دقيقة' },
+      { icon: '✅', text: 'تم قبول عرض د. نوف لحالة أحمد', time: 'منذ ساعة' },
+      { icon: '⭐', text: 'تقييم جديد 5 نجوم لد. فيصل', time: 'منذ ساعتين' },
+      { icon: '💰', text: 'إيراد إعلاني جديد: $12.50', time: 'منذ 3 ساعات' },
+    ],
+  },
+  en: {
+    loginTitle: 'SmileBridge',
+    loginSubtitle: 'Smart Dental Orthodontics Platform',
+    loginTab: 'Login',
+    registerTab: 'Sign Up',
+    email: 'Email',
+    password: 'Password',
+    forgotPassword: 'Forgot Password? 🔑',
+    loginBtn: 'Login ✨',
+    patient: 'Patient',
+    doctor: 'Doctor',
+    admin: 'Admin',
+    fullName: 'Full Name',
+    specialty: 'Specialty',
+    createAccount: 'Create Account 🚀',
+    forgotTitle: 'Reset Password',
+    forgotDesc: 'Enter your email and we\'ll send you a reset link',
+    sendReset: 'Send Reset Link 📧',
+    backToLogin: '← Back to Login',
+    resetTitle: 'Set New Password',
+    resetDesc: 'Enter your new password',
+    newPassword: 'New Password',
+    confirmPassword: 'Confirm Password',
+    setNewPassword: 'Set Password ✅',
+    dashboard: 'Dashboard',
+    myCases: 'My Cases',
+    uploadPhotos: 'Upload Photos',
+    offers: 'Received Offers',
+    messages: 'Messages',
+    history: 'Case History',
+    browseCases: 'Browse Cases',
+    myOffers: 'My Offers',
+    accepted: 'Accepted Cases',
+    ratings: 'Ratings',
+    users: 'User Management',
+    casesMgmt: 'Case Management',
+    adMgmt: 'Advertisements',
+    reports: 'Reports',
+    settings: 'Settings',
+    navMain: 'Main',
+    navServices: 'Services',
+    navSystem: 'System',
+    search: 'Search...',
+    notifications: 'Notifications',
+    activeCases: 'Active Cases',
+    receivedOffers: 'Received Offers',
+    unreadMessages: 'Unread Messages',
+    myDoctorRating: 'My Doctor Rating',
+    newThisWeek: '↑ 1 new this week',
+    newOffers: '↑ 3 new offers',
+    currentCases: 'Current Cases',
+    latestOffers: 'Latest Offers',
+    viewAll: 'View All',
+    uploadNewCase: '📸 Upload New Case',
+    all: 'All',
+    active: 'Active',
+    inProgress: 'In Progress',
+    completed: 'Completed',
+    new: 'New',
+    offersCount: 'offers',
+    viewOffers: 'View Offers',
+    submitOffer: 'Submit Offer',
+    photoGuide: '📸 Photo Guide',
+    photoGuideDesc: 'Take 6 photos from the angles below for the best evaluation from doctors',
+    photoSlots: ['Full Front Smile', 'Right Side — Lateral Bite', 'Left Side — Lateral Bite', 'Upper Arch (Top View)', 'Lower Arch (Bottom View)', 'Front with Open Mouth'],
+    caseDescription: 'Case Description (optional)',
+    casePlaceholder: 'Describe your issue briefly... Any details help the doctor understand your case better',
+    submitCaseBtn: 'Submit Case for Review 🚀',
+    saveDraft: 'Save as Draft',
+    uploadSuccess: 'Photo uploaded successfully! ✓',
+    caseSubmitted: 'Case submitted successfully! Doctors will be notified 🎉',
+    offersReceived: 'Offers from specialists',
+    sortByPrice: 'Price',
+    sortByRating: 'Rating',
+    sortByDuration: 'Duration',
+    bestPrice: '✅ Best Price',
+    selectDoctor: 'Select Doctor',
+    doctorSelected: (name) => `${name} selected! 🎉 We'll contact you soon`,
+    riyal: 'SAR',
+    month: 'month',
+    months: 'months',
+    experience: 'years exp.',
+    review: 'review',
+    reviews: 'reviews',
+    searchConversations: 'Search conversations...',
+    online: 'Online now',
+    typeMessage: 'Type your message...',
+    availableCases: 'Available Cases',
+    newToday: '↑ 4 new today',
+    submittedOffers: 'My Submitted Offers',
+    myAcceptedCases: 'Accepted Cases',
+    thisMonth: '↑ 2 this month',
+    avgRating: 'Average Rating',
+    ratingCount: (n) => `from ${n} reviews`,
+    newCases: 'New Available Cases',
+    allAvailable: (n) => `All (${n})`,
+    newFilter: 'New',
+    complex: 'Complex',
+    urgent: 'Urgent',
+    crowding: 'Crowding',
+    overlay: 'Overlay',
+    pending: 'Pending',
+    acceptedOffer: 'Accepted ✓',
+    rejected: 'Rejected',
+    patientCase: 'Case',
+    submitOfferTitle: (id) => `Submit Offer for Case #${id}`,
+    priceRiyal: 'Price (SAR)',
+    pricePlaceholder: 'e.g. 3500',
+    durationMonths: 'Expected Treatment Duration (months)',
+    durationPlaceholder: 'e.g. 12',
+    additionalNote: 'Additional Note (optional)',
+    notePlaceholder: 'Add details about your proposed treatment plan...',
+    sendOffer: 'Send Offer 🚀',
+    cancel: 'Cancel',
+    offerSent: 'Offer sent successfully! ✅',
+    basedOn: (n) => `Based on ${n} reviews`,
+    totalUsers: 'Total Users',
+    registeredDoctors: 'Registered Doctors',
+    totalCases: 'Total Cases',
+    adRevenue: 'Ad Revenue',
+    growthThisMonth: '↑ 12% this month',
+    newDoctors: '↑ 18 new',
+    thisWeek: '↑ 45 this week',
+    adRevenueThisMonth: '↑ 8% this month',
+    userGrowth: 'User Growth (Last 6 Months)',
+    recentActivity: 'Recent Activity',
+    months_ar: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+    user: 'User',
+    emailCol: 'Email',
+    role: 'Role',
+    status: 'Status',
+    joinDate: 'Join Date',
+    actions: 'Actions',
+    edit: 'Edit',
+    block: 'Block',
+    activeStatus: 'Active',
+    pendingStatus: 'Pending Review',
+    caseNumber: '#',
+    patientCol: 'Patient',
+    description: 'Description',
+    offersCol: 'Offers',
+    statusCol: 'Status',
+    details: 'Details',
+    reported: 'Reported',
+    adsenseSettings: 'Google AdSense Settings',
+    publisherId: 'AdSense Publisher ID',
+    topBannerSlot: 'Top Banner (Slot ID)',
+    bottomBannerSlot: 'Bottom Banner (Slot ID)',
+    sidebarSlot: 'Sidebar Ad (Slot ID)',
+    saveSettings: 'Save Settings',
+    featuredDoctors: 'Featured Doctor Ads (Coming Soon)',
+    featuredDesc: 'This feature will allow doctors to purchase premium ad placements within the app.',
+    bronze: 'Bronze Plan',
+    silver: 'Silver Plan',
+    gold: 'Gold Plan',
+    perMonth: '/month',
+    bronzeDesc: 'Listed in directory',
+    silverDesc: 'Featured banner + priority',
+    goldDesc: 'Top priority + premium profile',
+    completedCases: 'Completed Cases',
+    totalRevenue: 'Total Revenue',
+    completionRate: 'Completion Rate',
+    monthlyReport: 'Monthly Report — April 2026',
+    monthCol: 'Month',
+    newCasesCol: 'New Cases',
+    offersSubmitted: 'Offers Submitted',
+    completedCol: 'Completed',
+    revenue: 'Revenue',
+    generalSettings: 'General Settings',
+    appName: 'App Name',
+    supportEmail: 'Support Email',
+    defaultLang: 'Default Language',
+    arabicDefault: 'Arabic (default)',
+    english: 'English',
+    bilingual: 'Bilingual (Arabic/English)',
+    securitySettings: 'Security Settings',
+    maxImageSize: 'Max Image Size (MB)',
+    autoReviewDoctors: 'Auto-review new doctors',
+    autoAccept: 'Yes — Auto accept',
+    manualReview: 'No — Manual review required',
+    save: 'Save',
+    dataManagement: '🗑️ Data & Account Management',
+    dataManagementDesc: 'Per Google Play & App Store policies, users have the right to request data deletion.',
+    exportData: '📥 Export My Data',
+    deleteAccount: '🗑️ Request Account Deletion',
+    deleteWarning: '⚠️ Warning: This action is permanent and cannot be undone',
+    deleteWhat: 'The following will be deleted:',
+    deleteList: ['Your personal account information', 'All uploaded dental photos', 'Offer and message history', 'Your submitted reviews'],
+    deleteTime: '⏱️ Deletion will be completed within 30 days. Contact us at support@smilebridge.com within this period.',
+    confirmDelete: 'Confirm Deletion 🗑️',
+    deleteRequested: 'Your deletion request has been received. It will be completed within 30 days.',
+    exportSuccess: 'Your data has been exported successfully 📥',
+    noPreviousCases: 'No previous cases',
+    noPreviousCasesDesc: 'When you complete a treatment case, it will appear here with the option to rate your doctor',
+    disclaimerTitle: '⚠️ Medical Disclaimer',
+    disclaimerPoints: [
+      'This platform is a mediation tool only, connecting patients with orthodontic specialists.',
+      'Diagnoses and offers provided through the platform are preliminary and not a substitute for direct clinical examination.',
+      'Patients must consult a specialist in person before making any treatment decisions.',
+      'The platform does not provide medical advice and is not responsible for treatment outcomes.',
+      'Dental photos are used only for preliminary evaluation by registered doctors.'
+    ],
+    emergencyNote: '⚠️ If you are experiencing a medical emergency, please visit the nearest medical center or call emergency services.',
+    agreeBtn: 'I Agree & Understand ✅',
+    cookieTitle: '🍪 We use cookies',
+    cookieText: 'We use cookies and analytics data to improve your experience and provide better services. By agreeing, you accept our Privacy Policy.',
+    privacyPolicy: 'Privacy Policy',
+    reject: 'Reject',
+    acceptAll: 'Accept All ✅',
+    aboutUs: 'About Us',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
+    allRights: '© 2026 SmileBridge — All rights reserved',
+    adLabel: 'Ad',
+    adSupport: 'Google AdSense — Ads shown to support the platform',
+    adSponsored: 'Sponsored Ad',
+    welcome: (name) => `Welcome ${name}! 👋`,
+    chatReviews: [
+      'Excellent and professional doctor, results exceeded my expectations!',
+      'Great service and continuous follow-up, highly recommend',
+      'Good results but appointments were sometimes delayed',
+      'Best orthodontist I\'ve dealt with, patient and understanding',
+      'Professional work at a fair price, thank you Dr. Faisal'
+    ],
+    timeAgo: ['1 day ago', '3 days ago', '1 week ago', '2 weeks ago', '1 month ago'],
+    activityItems: [
+      { icon: '👤', text: 'New doctor joined: Dr. Khalid Al-Omari', time: '10 min ago' },
+      { icon: '📋', text: 'New case posted by Sara M.', time: '25 min ago' },
+      { icon: '✅', text: 'Dr. Nouf\'s offer accepted for Ahmed\'s case', time: '1 hour ago' },
+      { icon: '⭐', text: 'New 5-star review for Dr. Faisal', time: '2 hours ago' },
+      { icon: '💰', text: 'New ad revenue: $12.50', time: '3 hours ago' },
+    ],
+  }
+};
+
+function t(key) {
+  const lang = state.lang || 'ar';
+  const val = translations[lang]?.[key] ?? translations['ar']?.[key] ?? key;
+  return val;
+}
+
 // ==================== STATE ====================
 const state = {
   currentRole: 'patient',
@@ -1281,44 +1790,46 @@ const mockUsers = [
 ];
 
 // ==================== NAV CONFIG ====================
-const navConfig = {
-  patient: [
-    { section: 'رئيسي', items: [
-      { id: 'dashboard', icon: '📊', label: 'لوحة التحكم' },
-      { id: 'my-cases', icon: '📋', label: 'حالاتي', badge: '2' },
-      { id: 'upload', icon: '📸', label: 'رفع صور' },
-    ]},
-    { section: 'الخدمات', items: [
-      { id: 'offers', icon: '💰', label: 'العروض المقدمة' },
-      { id: 'messages', icon: '💬', label: 'الرسائل', badge: '3' },
-      { id: 'history', icon: '📁', label: 'سجل الحالات' },
-    ]},
-  ],
-  doctor: [
-    { section: 'رئيسي', items: [
-      { id: 'dashboard', icon: '📊', label: 'لوحة التحكم' },
-      { id: 'browse-cases', icon: '🔍', label: 'تصفح الحالات', badge: '4' },
-      { id: 'my-offers', icon: '📝', label: 'عروضي' },
-    ]},
-    { section: 'الخدمات', items: [
-      { id: 'accepted', icon: '✅', label: 'الحالات المقبولة' },
-      { id: 'messages', icon: '💬', label: 'الرسائل', badge: '1' },
-      { id: 'ratings', icon: '⭐', label: 'التقييمات' },
-    ]},
-  ],
-  admin: [
-    { section: 'رئيسي', items: [
-      { id: 'dashboard', icon: '📊', label: 'لوحة المراقبة' },
-      { id: 'users', icon: '👥', label: 'إدارة المستخدمين' },
-      { id: 'cases-mgmt', icon: '📋', label: 'إدارة الحالات' },
-    ]},
-    { section: 'النظام', items: [
-      { id: 'ads', icon: '📢', label: 'الإعلانات' },
-      { id: 'reports', icon: '📈', label: 'التقارير' },
-      { id: 'settings', icon: '⚙️', label: 'الإعدادات' },
-    ]},
-  ],
-};
+function getNavConfig() {
+  return {
+    patient: [
+      { section: t('navMain'), items: [
+        { id: 'dashboard', icon: '📊', label: t('dashboard') },
+        { id: 'my-cases', icon: '📋', label: t('myCases'), badge: '2' },
+        { id: 'upload', icon: '📸', label: t('uploadPhotos') },
+      ]},
+      { section: t('navServices'), items: [
+        { id: 'offers', icon: '💰', label: t('offers') },
+        { id: 'messages', icon: '💬', label: t('messages'), badge: '3' },
+        { id: 'history', icon: '📁', label: t('history') },
+      ]},
+    ],
+    doctor: [
+      { section: t('navMain'), items: [
+        { id: 'dashboard', icon: '📊', label: t('dashboard') },
+        { id: 'browse-cases', icon: '🔍', label: t('browseCases'), badge: '4' },
+        { id: 'my-offers', icon: '📝', label: t('myOffers') },
+      ]},
+      { section: t('navServices'), items: [
+        { id: 'accepted', icon: '✅', label: t('accepted') },
+        { id: 'messages', icon: '💬', label: t('messages'), badge: '1' },
+        { id: 'ratings', icon: '⭐', label: t('ratings') },
+      ]},
+    ],
+    admin: [
+      { section: t('navMain'), items: [
+        { id: 'dashboard', icon: '📊', label: t('dashboard') },
+        { id: 'users', icon: '👥', label: t('users') },
+        { id: 'cases-mgmt', icon: '📋', label: t('casesMgmt') },
+      ]},
+      { section: t('navSystem'), items: [
+        { id: 'ads', icon: '📢', label: t('adMgmt') },
+        { id: 'reports', icon: '📈', label: t('reports') },
+        { id: 'settings', icon: '⚙️', label: t('settings') },
+      ]},
+    ],
+  };
+}
 
 // ==================== LOGIN ====================
 function switchLoginTab(tab) {
@@ -1369,10 +1880,10 @@ function selectRole(role) {
 }
 
 function handleLogin() {
-  const names = { patient: 'محمد أحمد', doctor: 'د. فيصل الحمدان', admin: 'المشرف العام' };
-  const avatarLetters = { patient: 'م', doctor: 'ف', admin: 'أ' };
+  const roleLabels = { patient: t('patient'), doctor: t('doctor'), admin: t('admin') };
+  const names = { patient: state.lang === 'ar' ? 'محمد أحمد' : 'Mohamed Ahmed', doctor: state.lang === 'ar' ? 'د. فيصل الحمدان' : 'Dr. Faisal Al-Hamdan', admin: state.lang === 'ar' ? 'المشرف العام' : 'Super Admin' };
+  const avatarLetters = { patient: state.lang === 'ar' ? 'م' : 'M', doctor: state.lang === 'ar' ? 'ف' : 'F', admin: state.lang === 'ar' ? 'أ' : 'A' };
   const avatarClasses = { patient: 'avatar-patient', doctor: 'avatar-doctor', admin: 'avatar-admin' };
-  const roleLabels = { patient: 'مريض', doctor: 'طبيب أسنان', admin: 'أدمن' };
 
   state.user = { name: names[state.currentRole], role: state.currentRole };
 
@@ -1387,7 +1898,7 @@ function handleLogin() {
 
   buildSidebar();
   navigate('dashboard');
-  showToast('success', `مرحباً ${names[state.currentRole]}! 👋`);
+  showToast('success', t('welcome')(names[state.currentRole]));
 }
 
 function handleLogout() {
@@ -1416,7 +1927,7 @@ function hideStaticPage() {
 // ==================== SIDEBAR ====================
 function buildSidebar() {
   const nav = document.getElementById('sidebarNav');
-  const items = navConfig[state.currentRole];
+  const items = getNavConfig()[state.currentRole];
   nav.innerHTML = items.map(section => `
     <div class="nav-section">
       <div class="nav-section-title">${section.section}</div>
@@ -1438,21 +1949,21 @@ function navigate(page) {
   buildSidebar();
 
   const titles = {
-    'dashboard': 'لوحة التحكم',
-    'my-cases': 'حالاتي',
-    'upload': 'رفع صور الحالة',
-    'offers': 'العروض المقدمة',
-    'messages': 'الرسائل',
-    'history': 'سجل الحالات',
-    'browse-cases': 'تصفح الحالات',
-    'my-offers': 'عروضي',
-    'accepted': 'الحالات المقبولة',
-    'ratings': 'التقييمات',
-    'users': 'إدارة المستخدمين',
-    'cases-mgmt': 'إدارة الحالات',
-    'ads': 'إدارة الإعلانات',
-    'reports': 'التقارير والإحصائيات',
-    'settings': 'إعدادات النظام',
+    'dashboard': t('dashboard'),
+    'my-cases': t('myCases'),
+    'upload': t('uploadPhotos'),
+    'offers': t('offers'),
+    'messages': t('messages'),
+    'history': t('history'),
+    'browse-cases': t('browseCases'),
+    'my-offers': t('myOffers'),
+    'accepted': t('accepted'),
+    'ratings': t('ratings'),
+    'users': t('users'),
+    'cases-mgmt': t('casesMgmt'),
+    'ads': t('adMgmt'),
+    'reports': t('reports'),
+    'settings': t('settings'),
   };
   document.getElementById('pageTitle').textContent = titles[page] || '';
 
@@ -1473,37 +1984,37 @@ function renderPatientDashboard() {
         <div class="stat-icon primary">📋</div>
         <div class="stat-info">
           <div class="stat-value">2</div>
-          <div class="stat-label">حالاتي النشطة</div>
-          <div class="stat-change up">↑ حالة جديدة هذا الأسبوع</div>
+          <div class="stat-label">${t('activeCases')}</div>
+          <div class="stat-change up">${t('newThisWeek')}</div>
         </div>
       </div>
       <div class="stat-card animate-in">
         <div class="stat-icon success">💰</div>
         <div class="stat-info">
           <div class="stat-value">7</div>
-          <div class="stat-label">عروض مستلمة</div>
-          <div class="stat-change up">↑ 3 عروض جديدة</div>
+          <div class="stat-label">${t('receivedOffers')}</div>
+          <div class="stat-change up">${t('newOffers')}</div>
         </div>
       </div>
       <div class="stat-card animate-in">
         <div class="stat-icon accent">💬</div>
         <div class="stat-info">
           <div class="stat-value">3</div>
-          <div class="stat-label">رسائل غير مقروءة</div>
+          <div class="stat-label">${t('unreadMessages')}</div>
         </div>
       </div>
       <div class="stat-card animate-in">
         <div class="stat-icon warning">⭐</div>
         <div class="stat-info">
           <div class="stat-value">4.8</div>
-          <div class="stat-label">تقييم طبيبي</div>
+          <div class="stat-label">${t('myDoctorRating')}</div>
         </div>
       </div>
     </div>
 
     <div class="section-header">
-      <h3 class="section-title">حالاتي الحالية</h3>
-      <button class="btn btn-primary btn-sm" onclick="navigate('upload')">📸 رفع حالة جديدة</button>
+      <h3 class="section-title">${t('currentCases')}</h3>
+      <button class="btn btn-primary btn-sm" onclick="navigate('upload')">${t('uploadNewCase')}</button>
     </div>
 
     <div class="cases-grid">
@@ -1511,8 +2022,8 @@ function renderPatientDashboard() {
     </div>
 
     <div class="section-header mt-32">
-      <h3 class="section-title">آخر العروض</h3>
-      <button class="btn btn-secondary btn-sm" onclick="navigate('offers')">عرض الكل</button>
+      <h3 class="section-title">${t('latestOffers')}</h3>
+      <button class="btn btn-secondary btn-sm" onclick="navigate('offers')">${t('viewAll')}</button>
     </div>
     <div class="offers-list">
       ${mockOffers.slice(0, 2).map(renderOfferCard).join('')}
@@ -1523,34 +2034,28 @@ function renderPatientDashboard() {
 function renderMyCases() {
   document.getElementById('pageContent').innerHTML = `
     <div class="section-header">
-      <h3 class="section-title">جميع حالاتي</h3>
-      <button class="btn btn-primary btn-sm" onclick="navigate('upload')">📸 رفع حالة جديدة</button>
+      <h3 class="section-title">${t('myCases')} — ${t('all')}</h3>
+      <button class="btn btn-primary btn-sm" onclick="navigate('upload')">${t('uploadNewCase')}</button>
     </div>
     <div class="filter-bar">
-      <div class="filter-chip active">الكل</div>
-      <div class="filter-chip">نشطة</div>
-      <div class="filter-chip">قيد العلاج</div>
-      <div class="filter-chip">مكتملة</div>
+      <div class="filter-chip active">${t('all')}</div>
+      <div class="filter-chip">${t('active')}</div>
+      <div class="filter-chip">${t('inProgress')}</div>
+      <div class="filter-chip">${t('completed')}</div>
     </div>
     <div class="cases-grid">${mockCases.map(renderCaseCard).join('')}</div>
   `;
 }
 
 function renderUpload() {
-  const slots = [
-    { label: 'الابتسامة الأمامية الكاملة', icon: '😁' },
-    { label: 'الجانب الأيمن — إطباق جانبي', icon: '🦷' },
-    { label: 'الجانب الأيسر — إطباق جانبي', icon: '🦷' },
-    { label: 'الفك العلوي من الأعلى', icon: '👄' },
-    { label: 'الفك السفلي من الأسفل', icon: '👄' },
-    { label: 'الأمام مع فتح الفم', icon: '😬' },
-  ];
+  const slotIcons = ['😁','🦷','🦷','👄','👄','😬'];
+  const slots = t('photoSlots').map((label, i) => ({ label, icon: slotIcons[i] }));
   document.getElementById('pageContent').innerHTML = `
     <div class="card card-body mb-24" style="background: linear-gradient(135deg, rgba(108,92,231,0.06), rgba(0,206,201,0.04)); border-color: var(--primary);">
       <div class="flex-between">
         <div>
-          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">📸 دليل التقاط الصور</h3>
-          <p style="color: var(--text-secondary); font-size: 14px;">التقط 6 صور بالزوايا المحددة أدناه للحصول على أفضل تقييم من الأطباء</p>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">${t('photoGuide')}</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">${t('photoGuideDesc')}</p>
         </div>
         <span style="font-size: 48px;">📷</span>
       </div>
@@ -1567,13 +2072,13 @@ function renderUpload() {
     </div>
 
     <div class="form-group">
-      <label class="form-label">وصف الحالة (اختياري)</label>
-      <textarea class="form-input" rows="4" placeholder="صف مشكلتك بإيجاز... أي تفاصيل تساعد الطبيب على فهم حالتك بشكل أفضل"></textarea>
+      <label class="form-label">${t('caseDescription')}</label>
+      <textarea class="form-input" rows="4" placeholder="${t('casePlaceholder')}"></textarea>
     </div>
 
     <div class="flex gap-12">
-      <button class="btn btn-primary btn-lg" onclick="submitCase()">إرسال الحالة للمراجعة 🚀</button>
-      <button class="btn btn-secondary btn-lg">حفظ كمسودة</button>
+      <button class="btn btn-primary btn-lg" onclick="submitCase()">${t('submitCaseBtn')}</button>
+      <button class="btn btn-secondary btn-lg">${t('saveDraft')}</button>
     </div>
   `;
 }
@@ -2160,11 +2665,11 @@ function simulateUpload(slot, index) {
     <span class="slot-number">${index + 1}</span>
     <div class="upload-preview" style="background: linear-gradient(135deg, rgba(108,92,231,0.2), rgba(0,206,201,0.2)); display: flex; align-items: center; justify-content: center; font-size: 48px;">✅</div>
   `;
-  showToast('success', 'تم رفع الصورة بنجاح! ✓');
+  showToast('success', t('uploadSuccess'));
 }
 
 function submitCase() {
-  showToast('success', 'تم إرسال الحالة بنجاح! سيتم إشعار الأطباء المتخصصين 🎉');
+  showToast('success', t('caseSubmitted'));
   setTimeout(() => navigate('my-cases'), 1500);
 }
 
@@ -2234,13 +2739,64 @@ function toggleTheme() {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', state.theme);
   document.getElementById('themeBtn').textContent = state.theme === 'light' ? '🌙' : '☀️';
+  localStorage.setItem('sb_theme', state.theme);
 }
 
 function switchLang(lang) {
   state.lang = lang;
+  localStorage.setItem('sb_lang', lang);
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   document.documentElement.setAttribute('lang', lang);
+  updateLoginUI();
+  // Re-render current page with new language
+  if (state.user) {
+    buildSidebar();
+    if (state.currentPage) navigate(state.currentPage);
+  }
+}
+
+function updateLoginUI() {
+  // Login page elements
+  const el = (id) => document.getElementById(id);
+  if (el('loginTitle')) el('loginTitle').textContent = t('loginTitle');
+  if (el('loginSubtitle')) el('loginSubtitle').textContent = t('loginSubtitle');
+  if (el('tabLogin')) el('tabLogin').textContent = t('loginTab');
+  if (el('tabRegister')) el('tabRegister').textContent = t('registerTab');
+  if (el('rolePatient')) el('rolePatient').textContent = t('patient');
+  if (el('roleDoctor')) el('roleDoctor').textContent = t('doctor');
+  if (el('roleAdmin')) el('roleAdmin').textContent = t('admin');
+  if (el('lblEmail')) el('lblEmail').textContent = t('email');
+  if (el('lblEmail2')) el('lblEmail2').textContent = t('email');
+  if (el('lblPassword')) el('lblPassword').textContent = t('password');
+  if (el('lblForgot')) el('lblForgot').textContent = t('forgotPassword');
+  if (el('lblLoginBtn')) el('lblLoginBtn').textContent = t('loginBtn');
+  if (el('lblForgotTitle')) el('lblForgotTitle').textContent = t('forgotTitle');
+  if (el('lblForgotDesc')) el('lblForgotDesc').textContent = t('forgotDesc');
+  if (el('lblSendReset')) el('lblSendReset').textContent = t('sendReset');
+  if (el('lblBackLogin')) el('lblBackLogin').textContent = t('backToLogin');
+  if (el('lblResetTitle')) el('lblResetTitle').textContent = t('resetTitle');
+  if (el('lblResetDesc')) el('lblResetDesc').textContent = t('resetDesc');
+  if (el('lblNewPass')) el('lblNewPass').textContent = t('newPassword');
+  if (el('lblConfirmPass')) el('lblConfirmPass').textContent = t('confirmPassword');
+  if (el('lblSetPass')) el('lblSetPass').textContent = t('setNewPassword');
+
+  // Register form labels
+  document.querySelectorAll('#registerForm .form-label').forEach((lbl, i) => {
+    if (i === 0) lbl.textContent = t('fullName');
+    if (i === 1) lbl.textContent = t('email');
+    if (i === 2) lbl.textContent = t('password');
+  });
+  const regBtn = document.querySelector('#registerForm .btn-primary');
+  if (regBtn) regBtn.textContent = t('createAccount');
+
+  // Disclaimer modal
+  if (el('lblDisclaimerTitle')) el('lblDisclaimerTitle').textContent = t('disclaimerTitle');
+  if (el('lblAgreeBtn')) el('lblAgreeBtn').textContent = t('agreeBtn');
+
+  // Cookie banner
+  if (el('lblCookieTitle')) el('lblCookieTitle').textContent = t('cookieTitle');
+  if (el('lblCookieText')) el('lblCookieText').textContent = t('cookieText');
 }
 
 function toggleSidebar() {
@@ -2265,6 +2821,21 @@ if ('serviceWorker' in navigator) {
 
 // Show disclaimer if not accepted
 document.addEventListener('DOMContentLoaded', () => {
+  // Load persisted preferences
+  const savedTheme = localStorage.getItem('sb_theme');
+  if (savedTheme) {
+    state.theme = savedTheme;
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeBtn').textContent = savedTheme === 'light' ? '🌙' : '☀️';
+  }
+  const savedLang = localStorage.getItem('sb_lang');
+  if (savedLang) {
+    state.lang = savedLang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === savedLang));
+    document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', savedLang);
+  }
+
   if (!localStorage.getItem('sb_disclaimer_accepted')) {
     document.getElementById('disclaimerModal').classList.add('active');
   } else {
