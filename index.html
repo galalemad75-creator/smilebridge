@@ -797,7 +797,45 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
           <label class="form-label">كلمة المرور</label>
           <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" value="demo123">
         </div>
+        <div style="text-align: start; margin-bottom: 16px;">
+          <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;">نسيت كلمة المرور؟ 🔑</a>
+        </div>
         <button class="btn btn-primary" onclick="handleLogin()">تسجيل الدخول ✨</button>
+      </div>
+
+      <!-- Forgot Password Form -->
+      <div id="forgotForm" class="hidden">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div style="font-size: 48px; margin-bottom: 8px;">🔐</div>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;">استعادة كلمة المرور</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;">أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">البريد الإلكتروني</label>
+          <input type="email" class="form-input" placeholder="example@email.com" id="forgotEmail">
+        </div>
+        <button class="btn btn-primary" onclick="handleForgotPassword()">إرسال رابط الاستعادة 📧</button>
+        <div style="text-align: center; margin-top: 16px;">
+          <a href="#" onclick="switchLoginTab('login'); return false;" style="color: rgba(255,255,255,0.5); font-size: 13px;">العودة لتسجيل الدخول ←</a>
+        </div>
+      </div>
+
+      <!-- Reset Password Form (after clicking email link) -->
+      <div id="resetForm" class="hidden">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div style="font-size: 48px; margin-bottom: 8px;">🔑</div>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;">تعيين كلمة مرور جديدة</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;">أدخل كلمة المرور الجديدة</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label">كلمة المرور الجديدة</label>
+          <input type="password" class="form-input" placeholder="••••••••" id="newPassword">
+        </div>
+        <div class="form-group">
+          <label class="form-label">تأكيد كلمة المرور</label>
+          <input type="password" class="form-input" placeholder="••••••••" id="confirmPassword">
+        </div>
+        <button class="btn btn-primary" onclick="handleResetPassword()">تعيين كلمة المرور ✅</button>
       </div>
 
       <div id="registerForm" class="hidden">
@@ -1026,6 +1064,41 @@ function switchLoginTab(tab) {
   document.querySelectorAll('.login-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
   document.getElementById('loginForm').classList.toggle('hidden', tab !== 'login');
   document.getElementById('registerForm').classList.toggle('hidden', tab !== 'register');
+  document.getElementById('forgotForm').classList.toggle('hidden', tab !== 'forgot');
+  document.getElementById('resetForm').classList.toggle('hidden', tab !== 'reset');
+  // Show/hide role selector and tabs depending on view
+  document.querySelector('.role-selector').classList.toggle('hidden', tab === 'forgot' || tab === 'reset');
+  document.querySelector('.login-tabs').classList.toggle('hidden', tab === 'forgot' || tab === 'reset');
+}
+
+function handleForgotPassword() {
+  const email = document.getElementById('forgotEmail').value.trim();
+  if (!email) {
+    showToast('error', 'الرجاء إدخال البريد الإلكتروني');
+    return;
+  }
+  showToast('success', 'تم إرسال رابط الاستعادة إلى بريدك الإلكتروني 📧');
+  // Simulate: after "clicking email link", show reset form
+  setTimeout(() => switchLoginTab('reset'), 2000);
+}
+
+function handleResetPassword() {
+  const pass = document.getElementById('newPassword').value;
+  const confirm = document.getElementById('confirmPassword').value;
+  if (!pass || !confirm) {
+    showToast('error', 'الرجاء ملء جميع الحقول');
+    return;
+  }
+  if (pass !== confirm) {
+    showToast('error', 'كلمتا المرور غير متطابقتين ❌');
+    return;
+  }
+  if (pass.length < 6) {
+    showToast('error', 'كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+    return;
+  }
+  showToast('success', 'تم تعيين كلمة المرور الجديدة بنجاح! 🎉');
+  setTimeout(() => switchLoginTab('login'), 1500);
 }
 
 function selectRole(role) {
