@@ -2814,9 +2814,18 @@ function showToast(type, message) {
 }
 
 // ==================== INIT ====================
-// Register Service Worker
+// Register Service Worker (with old cache cleanup)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    // Force update
+    reg.update();
+  }).catch(() => {});
+  // Unregister any conflicting workers
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(r => {
+      if (r.active && !r.active.scriptURL.includes('sw.js')) r.unregister();
+    });
+  });
 }
 
 // Show disclaimer if not accepted

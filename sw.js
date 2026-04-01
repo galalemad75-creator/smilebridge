@@ -1,5 +1,5 @@
 // SmileBridge Service Worker
-const CACHE_NAME = 'smilebridge-v1';
+const CACHE_NAME = 'smilebridge-v2';
 const ASSETS = [
   '/',
   '/index.html',
