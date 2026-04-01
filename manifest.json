@@ -1,7 +1,7 @@
 {
   "name": "سمايل بريدج — SmileBridge",
   "short_name": "SmileBridge",
-  "description": "منصة ذكية لربط مرضى تقويم الأسنان بالأطباء المتخصصين",
+  "description": "منصة ذكية لربط مرضى تقويم الأسنان بالأطباء المتخصصين — A smart platform connecting dental patients with orthodontists",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1E1E2E",
@@ -9,8 +9,12 @@
   "orientation": "portrait-primary",
   "dir": "rtl",
   "lang": "ar",
+  "categories": ["medical", "health", "lifestyle"],
+  "scope": "/",
+  "prefer_related_applications": false,
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
   ]
 }

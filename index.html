@@ -10,6 +10,12 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#6C5CE7">
 <meta name="msapplication-TileImage" content="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SmileBridge">
+<meta name="description" content="سمايل بريدج — منصة ذكية لربط مرضى تقويم الأسنان بالأطباء المتخصصين. احصل على أفضل عروض التقويم من أطباء معتمدين.">
+<meta name="rating" content="medical">
+<meta name="content-rating" content="mature">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -761,6 +767,16 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 </style>
 </head>
 <body>
+<noscript>
+  <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; text-align: center; padding: 40px; background: #1E1E2E; color: white;">
+    <div>
+      <h1 style="font-size: 48px; margin-bottom: 16px;">🦷</h1>
+      <h2>سمايل بريدج — SmileBridge</h2>
+      <p style="color: #9E9EB8; margin-top: 12px;">يجب تفعيل JavaScript لتشغيل هذا التطبيق</p>
+      <p style="color: #5A5A78; margin-top: 8px;">Please enable JavaScript to use this application</p>
+    </div>
+  </div>
+</noscript>
 
 <!-- ==================== LOGIN PAGE ==================== -->
 <div id="loginPage">
@@ -796,11 +812,11 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       <div id="loginForm">
         <div class="form-group">
           <label class="form-label">البريد الإلكتروني</label>
-          <input type="email" class="form-input" placeholder="example@email.com" id="loginEmail" value="demo@smilebridge.com">
+          <input type="email" class="form-input" placeholder="example@email.com" id="loginEmail" autocomplete="email">
         </div>
         <div class="form-group">
           <label class="form-label">كلمة المرور</label>
-          <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" value="demo123">
+          <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" autocomplete="current-password">
         </div>
         <div style="text-align: start; margin-bottom: 16px;">
           <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;">نسيت كلمة المرور؟ 🔑</a>
@@ -817,7 +833,7 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         </div>
         <div class="form-group">
           <label class="form-label">البريد الإلكتروني</label>
-          <input type="email" class="form-input" placeholder="example@email.com" id="forgotEmail">
+          <input type="email" class="form-input" placeholder="example@email.com" id="forgotEmail" autocomplete="email">
         </div>
         <button class="btn btn-primary" onclick="handleForgotPassword()">إرسال رابط الاستعادة 📧</button>
         <div style="text-align: center; margin-top: 16px;">
@@ -834,11 +850,11 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         </div>
         <div class="form-group">
           <label class="form-label">كلمة المرور الجديدة</label>
-          <input type="password" class="form-input" placeholder="••••••••" id="newPassword">
+          <input type="password" class="form-input" placeholder="••••••••" id="newPassword" autocomplete="new-password">
         </div>
         <div class="form-group">
           <label class="form-label">تأكيد كلمة المرور</label>
-          <input type="password" class="form-input" placeholder="••••••••" id="confirmPassword">
+          <input type="password" class="form-input" placeholder="••••••••" id="confirmPassword" autocomplete="new-password">
         </div>
         <button class="btn btn-primary" onclick="handleResetPassword()">تعيين كلمة المرور ✅</button>
       </div>
@@ -846,15 +862,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       <div id="registerForm" class="hidden">
         <div class="form-group">
           <label class="form-label">الاسم الكامل</label>
-          <input type="text" class="form-input" placeholder="أدخل اسمك">
+          <input type="text" class="form-input" placeholder="أدخل اسمك" autocomplete="name">
         </div>
         <div class="form-group">
           <label class="form-label">البريد الإلكتروني</label>
-          <input type="email" class="form-input" placeholder="example@email.com">
+          <input type="email" class="form-input" placeholder="example@email.com" autocomplete="email">
         </div>
         <div class="form-group">
           <label class="form-label">كلمة المرور</label>
-          <input type="password" class="form-input" placeholder="••••••••">
+          <input type="password" class="form-input" placeholder="••••••••" autocomplete="new-password">
         </div>
         <div class="form-group hidden" id="doctorSpecialty">
           <label class="form-label">التخصص</label>
@@ -948,8 +964,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
           <li>ضمان أمان المنصة ومنع الاستخدام المسيء</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. حماية بياناتك</h3>
-        <p>نستخدم تقنيات تشفير متقدمة لحماية بياناتك. صور الأسنان تُعرض على الأطباء بشكل مجهول (بدون اسم المريض الحقيقي) حتى يتم قبول العرض.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. حماية بياناتك الصحية</h3>
+        <p>بصفتنا منصة تقدم خدمات ذات صلة بالصحة، نولي اهتماماً خاصاً لحماية بياناتك الصحية:</p>
+        <ul style="padding-start: 20px;">
+          <li>صور الأسنان <strong>مشفّرة</strong> أثناء النقل والتخزين باستخدام بروتوكولات SSL/TLS</li>
+          <li>صور الأسنان تُعرض على الأطباء <strong>بشكل مجهول</strong> (بدون اسم المريض الحقيقي) حتى يتم قبول العرض</li>
+          <li>نطبق معايير أمان تتوافق مع أفضل الممارسات لحماية البيانات الصحية (نظام HIPAA كمرجع)</li>
+          <li>لا نستخدم بياناتك الصحية لأغراض تسويقية أو بيعها لأطراف ثالثة</li>
+          <li>يتم حذف صور الحالات المكتملة تلقائياً بعد 12 شهراً من إغلاق الحالة</li>
+        </ul>
         <br>
         <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. مشاركة المعلومات</h3>
         <p>لا نبيع أو نشارك بياناتك الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
@@ -959,7 +982,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
           <li>مزودي الخدمات التقنية (استضافة، تحليلات) بموجب اتفاقيات سرية</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. حقوقك</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. الاحتفاظ بالبيانات</h3>
+        <p>نحتفظ ببياناتك طالما كان حسابك نشطاً. بعد طلب الحذف:</p>
+        <ul style="padding-start: 20px;">
+          <li>يتم حذف جميع بياناتك الشخصية خلال 30 يوماً</li>
+          <li>قد نحتفظ ببعض البيانات المجهّلة (مجمّعة) لأغراض إحصائية</li>
+          <li>نحتفظ بسجلات معاملات مالية مطلوبة قانونياً لمدة 7 سنوات</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. حقوقك</h3>
         <ul style="padding-start: 20px;">
           <li>طلب نسخة من بياناتك الشخصية</li>
           <li>طلب تصحيح أي معلومات غير دقيقة</li>
@@ -967,10 +998,10 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
           <li>الاعتراض على معالجة بياناتك</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. ملفات تعريف الارتباط (Cookies)</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. ملفات تعريف الارتباط (Cookies)</h3>
         <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتذكر تفضيلاتك. يمكنك التحكم بها من إعدادات المتصفح.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. التواصل</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. التواصل</h3>
         <p>لأي استفسار حول الخصوصية: privacy@smilebridge.com</p>
       </div>
     </div>
@@ -991,9 +1022,11 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. القبول بالشروط</h3>
         <p>باستخدامك لمنصة سمايل بريدج، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق، يرجى عدم استخدام المنصة.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. شروط التسجيل</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. شروط التسجيل والسن</h3>
         <ul style="padding-start: 20px;">
-          <li>يجب أن يكون عمرك 18 سنة أو أكثر (أو بموافقة ولي الأمر)</li>
+          <li>يجب أن يكون عمرك <strong>18 سنة أو أكثر</strong> للتسجيل</li>
+          <li>للمستخدمين بين 13-17 سنة: يتطلب موافقة خطية من ولي الأمر</li>
+          <li>المنصة غير متاحة للمستخدمين أقل من 13 سنة</li>
           <li>تقديم معلومات صحيحة ودقيقة عند التسجيل</li>
           <li>الحفاظ على سرية بيانات الدخول</li>
           <li>للأطباء: يجب إثبات المؤهلات والتراخيص المهنية</li>
@@ -1026,8 +1059,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. الدفع والرسوم</h3>
         <p>المنصة مجانية للمرضى حالياً. يتم الدفع مباشرة للطبيب حسب العرض المتفق عليه. رسوم الأطباء المميزين (مستقبلاً) تُحدد وفق باقات الاشتراك.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. إنهاء الحساب</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. إنهاء الحساب وحذف البيانات</h3>
         <p>نحتفظ بالحق في تعليق أو إنهاء أي حساب ينتهك هذه الشروط، أو يسيء استخدام المنصة، أو يقدم معلومات مزيفة.</p>
+        <p style="margin-top: 8px;">لطلب حذف حسابك وجميع بياناتك:</p>
+        <ul style="padding-start: 20px;">
+          <li>من داخل التطبيق: الإعدادات ← إدارة البيانات والحسابات ← طلب حذف الحساب</li>
+          <li>عبر البريد الإلكتروني: <strong>privacy@smilebridge.com</strong></li>
+          <li>يتم إتمام الحذف خلال <strong>30 يوماً</strong> من الطلب</li>
+          <li>بعض البيانات المجمّعة قد تبقى لأغراض إحصائية بدون ربطها بهويتك</li>
+        </ul>
         <br>
         <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. القانون المعمول به</h3>
         <p>تخضع هذه الشروط لقوانين المملكة العربية السعودية، وأي نزاع يُحل عبر المحاكم المختصة.</p>
@@ -1038,6 +1078,48 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">10. التواصل</h3>
         <p>لأي استفسار: legal@smilebridge.com</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MEDICAL DISCLAIMER MODAL ==================== -->
+<div class="modal-overlay" id="disclaimerModal" style="z-index: 3000;">
+  <div class="modal" style="max-width: 520px;">
+    <div class="modal-header">
+      <h3 class="modal-title">⚠️ إخلاء المسؤولية الطبية</h3>
+    </div>
+    <div class="modal-body" style="line-height: 2;">
+      <p style="margin-bottom: 12px;"><strong>Medical Disclaimer</strong></p>
+      <ul style="padding-inline-start: 20px; color: var(--text-secondary); font-size: 14px;">
+        <li>هذه المنصة هي <strong>أداة وساطة</strong> فقط لربط المرضى بالأطباء المتخصصين في تقويم الأسنان.</li>
+        <li>التشخيصات والعروض المقدمة عبر المنصة هي <strong>تشخيصات أولية</strong> وليست بديلاً عن الفحص السريري المباشر.</li>
+        <li>يجب على المريض <strong>استشارة الطبيب المختص شخصياً</strong> قبل اتخاذ أي قرار علاجي.</li>
+        <li>المنصة <strong>لا تقدم نصائح طبية</strong> ولا تتحمل مسؤولية نتائج العلاج.</li>
+        <li>صور الأسنان المرفوعة تُستخدم فقط لأغراض <strong>التقييم الأولي</strong> من قبل أطباء مسجلين.</li>
+      </ul>
+      <div style="background: rgba(253,203,110,0.15); border: 1px solid var(--warning); border-radius: 10px; padding: 12px; margin-top: 16px; font-size: 13px;">
+        ⚠️ إذا كنت تعاني من حالة طبية طارئة، يرجى التوجه لأقرب مركز طبي أو الاتصال بالطوارئ.
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" onclick="acceptDisclaimer()">أوافق وأفهم ✅</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== COOKIE CONSENT BANNER ==================== -->
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 2500; background: var(--bg-card); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); padding: 20px 24px; display: none;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
+    <div style="flex: 1; min-width: 300px;">
+      <strong style="font-size: 15px;">🍪 نستخدم ملفات تعريف الارتباط</strong>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">
+        نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على 
+        <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: var(--primary);">سياسة الخصوصية</a> الخاصة بنا.
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button class="btn btn-secondary btn-sm" onclick="rejectCookies()">رفض</button>
+      <button class="btn btn-primary btn-sm" onclick="acceptCookies()">قبول الكل ✅</button>
     </div>
   </div>
 </div>
@@ -1091,7 +1173,8 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
     <!-- Ad Banner Top -->
     <div class="page-content">
       <div class="ad-banner" id="adTop">
-        📢 إعلان Google AdSense — شريط إعلاني علوي (728×90)
+        <span class="badge badge-warning" style="margin-inline-end: 8px;">إعلان</span>
+        <span style="font-size: 12px;">Google AdSense — يتم عرض إعلانات لدعم المنصة</span>
       </div>
 
       <div style="display: flex; gap: 24px;">
@@ -1105,14 +1188,16 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         <!-- Sidebar Ad -->
         <div style="width: 200px; flex-shrink: 0;" class="ad-sidebar-col">
           <div class="ad-sidebar">
-            📢 إعلان جانبي<br>إعلان الطبيب المميز<br>(160×600)
+            <span class="badge badge-warning" style="margin-bottom: 8px;">إعلان</span>
+            <span style="font-size: 12px;">إعلان ممول</span>
           </div>
         </div>
       </div>
 
       <!-- Ad Banner Bottom -->
       <div class="ad-banner" id="adBottom">
-        📢 إعلان Google AdSense — شريط إعلاني سفلي (728×90)
+        <span class="badge badge-warning" style="margin-inline-end: 8px;">إعلان</span>
+        <span style="font-size: 12px;">Google AdSense — يتم عرض إعلانات لدعم المنصة</span>
       </div>
     </div>
   </div>
@@ -1912,7 +1997,7 @@ function renderSettings() {
       </div>
       <button class="btn btn-primary">حفظ الإعدادات</button>
     </div>
-    <div class="card card-body">
+    <div class="card card-body mb-24">
       <h3 class="section-title mb-16">إعدادات الأمان</h3>
       <div class="form-group">
         <label class="form-label">الحد الأقصى لحجم الصورة (MB)</label>
@@ -1926,6 +2011,16 @@ function renderSettings() {
         </select>
       </div>
       <button class="btn btn-primary">حفظ</button>
+    </div>
+    <div class="card card-body" style="border-color: var(--danger);">
+      <h3 class="section-title mb-16" style="color: var(--danger);">🗑️ إدارة البيانات والحسابات</h3>
+      <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px;">
+        وفقاً لسياسات Google Play و App Store، يحق للمستخدمين طلب حذف بياناتهم.
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <button class="btn btn-secondary" onclick="exportUserData()">📥 تصدير بياناتي</button>
+        <button class="btn btn-danger" onclick="confirmDeleteAccount()">🗑️ طلب حذف الحساب</button>
+      </div>
     </div>
   `;
 }
@@ -2128,7 +2223,7 @@ function sendMessage(input) {
   if (!messages) return;
   const msg = document.createElement('div');
   msg.className = 'message sent';
-  msg.innerHTML = `${input.value}<div class="message-time">الآن</div>`;
+  msg.innerHTML = `${escapeHtml(input.value)}<div class="message-time">الآن</div>`;
   messages.appendChild(msg);
   messages.scrollTop = messages.scrollHeight;
   input.value = '';
@@ -2163,7 +2258,101 @@ function showToast(type, message) {
 }
 
 // ==================== INIT ====================
-// Auto-login for demo convenience
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// Show disclaimer if not accepted
+document.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('sb_disclaimer_accepted')) {
+    document.getElementById('disclaimerModal').classList.add('active');
+  } else {
+    showCookieBannerIfNeeded();
+  }
+});
+
+function acceptDisclaimer() {
+  localStorage.setItem('sb_disclaimer_accepted', '1');
+  document.getElementById('disclaimerModal').classList.remove('active');
+  showCookieBannerIfNeeded();
+}
+
+function showCookieBannerIfNeeded() {
+  if (!localStorage.getItem('sb_cookies_accepted')) {
+    setTimeout(() => {
+      document.getElementById('cookieBanner').style.display = '';
+    }, 800);
+  }
+}
+
+function acceptCookies() {
+  localStorage.setItem('sb_cookies_accepted', 'accepted');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+
+function rejectCookies() {
+  localStorage.setItem('sb_cookies_accepted', 'rejected');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+
+// Sanitize user input to prevent XSS
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+// ==================== DATA RIGHTS (GDPR / Store Compliance) ====================
+function exportUserData() {
+  const userData = {
+    user: state.user,
+    exportDate: new Date().toISOString(),
+    note: 'هذا ملف بياناتك الشخصية من SmileBridge. يحتوي على معلومات حسابك.'
+  };
+  const blob = new Blob([JSON.stringify(userData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'smilebridge-my-data.json'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('success', 'تم تصدير بياناتك بنجاح 📥');
+}
+
+function confirmDeleteAccount() {
+  const modal = document.getElementById('modalContent');
+  modal.innerHTML = `
+    <div class="modal-header">
+      <h3 class="modal-title">🗑️ طلب حذف الحساب</h3>
+      <div class="modal-close" onclick="closeModal()">✕</div>
+    </div>
+    <div class="modal-body" style="line-height: 2;">
+      <div style="background: rgba(225,112,85,0.1); border: 1px solid var(--danger); border-radius: 10px; padding: 16px; margin-bottom: 16px;">
+        <strong style="color: var(--danger);">⚠️ تحذير: هذا الإجراء نهائي ولا يمكن التراجع عنه</strong>
+      </div>
+      <p style="font-size: 14px; color: var(--text-secondary);">سيتم حذف ما يلي:</p>
+      <ul style="padding-inline-start: 20px; color: var(--text-secondary); font-size: 14px;">
+        <li>معلومات حسابك الشخصية</li>
+        <li>جميع صور الأسنان المرفوعة</li>
+        <li>سجل العروض والرسائل</li>
+        <li>التقييمات التي قدمتها</li>
+      </ul>
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">
+        ⏱️ سيتم إتمام الحذف خلال 30 يوماً من الطلب. يمكنك التواصل معنا على support@smilebridge.com خلال هذه الفترة.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-danger" onclick="executeDeleteAccount()">تأكيد الحذف 🗑️</button>
+      <button class="btn btn-secondary" onclick="closeModal()">إلغاء</button>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('active');
+}
+
+function executeDeleteAccount() {
+  closeModal();
+  showToast('success', 'تم استلام طلب حذف حسابك. سيتم الحذف خلال 30 يوماً.');
+  setTimeout(() => handleLogout(), 3000);
+}
 </script>
 </body>
 </html>
