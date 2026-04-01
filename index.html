@@ -862,6 +862,177 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         </div>
         <button class="btn btn-primary" onclick="handleLogin()">إنشاء الحساب 🚀</button>
       </div>
+
+      <!-- Footer Links -->
+      <div style="text-align: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#" onclick="showStaticPage('about'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">من نحن</a>
+          <span style="color: rgba(255,255,255,0.15);">|</span>
+          <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">سياسة الخصوصية</a>
+          <span style="color: rgba(255,255,255,0.15);">|</span>
+          <a href="#" onclick="showStaticPage('terms'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">سياسة الاستخدام</a>
+        </div>
+        <p style="color: rgba(255,255,255,0.2); font-size: 11px; margin-top: 12px;">© 2026 SmileBridge — جميع الحقوق محفوظة</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== STATIC PAGES ==================== -->
+<!-- About Us -->
+<div id="pageAbout" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
+  <div style="max-width: 720px; margin: 0 auto;">
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <div style="font-size: 56px; margin-bottom: 12px;">😁</div>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">من نحن</h1>
+        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">About SmileBridge</p>
+      </div>
+      <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
+        <p><strong style="color: white;">سمايل بريدج</strong> هي منصة رقمية ذكية تهدف إلى تسهيل حصول المرضى على خدمات تقويم الأسنان من خلال ربطهم بأفضل الأطباء المتخصصين بطريقة شفافة وسهلة.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">🎯 رسالتنا</h3>
+        <p>نسعى لتمكين كل مريض من الوصول إلى أفضل رعاية تقويمية بأسعار تنافسية، من خلال منصة تتيح للأطباء التنافس على تقديم أفضل العروض.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">👁️ رؤيتنا</h3>
+        <p>أن نكون المنصة الرائدة في منطقة الشرق الأوسط لربط مرضى تقويم الأسنان بالأطباء المتخصصين، مع ضمان الجودة والشفافية في كل خطوة.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">💡 كيف نعمل؟</h3>
+        <ul style="padding-start: 20px;">
+          <li>📸 المريض يلتقط صور أسنانه من الزوايا الطبية المحددة</li>
+          <li>📋 يتم نشر الحالة بشكل مجهول على المنصة</li>
+          <li>👨‍⚕️ الأطباء المتخصصون يتصفحون الحالة ويقدّمون عروضهم</li>
+          <li>💰 المريض يقارن العروض (السعر، المدة، التقييمات) ويختار</li>
+          <li>⭐ بعد الانتهاء، المريض يقيّم تجربته</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">📞 تواصل معنا</h3>
+        <p>📧 support@smilebridge.com</p>
+        <p>📱 +966 XX XXX XXXX</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Policy -->
+<div id="pagePrivacy" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
+  <div style="max-width: 720px; margin: 0 auto;">
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <div style="font-size: 56px; margin-bottom: 12px;">🔒</div>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">سياسة الخصوصية</h1>
+        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Privacy Policy — آخر تحديث: أبريل 2026</p>
+      </div>
+      <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. المعلومات التي نجمعها</h3>
+        <p>نجمع المعلومات التالية عند استخدامك للمنصة:</p>
+        <ul style="padding-start: 20px;">
+          <li><strong style="color: white;">معلومات الحساب:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، نوع الحساب (مريض/طبيب)</li>
+          <li><strong style="color: white;">صور الأسنان:</strong> الصور التي ترفعها لعرض حالتك على الأطباء</li>
+          <li><strong style="color: white;">معلومات الطبيب:</strong> التخصص، سنوات الخبرة، المؤهلات، التراخيص</li>
+          <li><strong style="color: white;">سجل النشاط:</strong> العروض المقدمة، الرسائل، التقييمات</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. كيف نستخدم معلوماتك</h3>
+        <ul style="padding-start: 20px;">
+          <li>تقديم خدمات المنصة وربط المرضى بالأطباء</li>
+          <li>تحسين تجربة المستخدم وتطوير المنصة</li>
+          <li>إرسال إشعارات حول العروض الجديدة والمواعيد</li>
+          <li>ضمان أمان المنصة ومنع الاستخدام المسيء</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. حماية بياناتك</h3>
+        <p>نستخدم تقنيات تشفير متقدمة لحماية بياناتك. صور الأسنان تُعرض على الأطباء بشكل مجهول (بدون اسم المريض الحقيقي) حتى يتم قبول العرض.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. مشاركة المعلومات</h3>
+        <p>لا نبيع أو نشارك بياناتك الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
+        <ul style="padding-start: 20px;">
+          <li>مع الطبيب المختار بعد قبول العرض (معلومات التواصل)</li>
+          <li>عند الطلب القانوني من الجهات المختصة</li>
+          <li>مزودي الخدمات التقنية (استضافة، تحليلات) بموجب اتفاقيات سرية</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. حقوقك</h3>
+        <ul style="padding-start: 20px;">
+          <li>طلب نسخة من بياناتك الشخصية</li>
+          <li>طلب تصحيح أي معلومات غير دقيقة</li>
+          <li>طلب حذف حسابك وجميع بياناتك</li>
+          <li>الاعتراض على معالجة بياناتك</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. ملفات تعريف الارتباط (Cookies)</h3>
+        <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتذكر تفضيلاتك. يمكنك التحكم بها من إعدادات المتصفح.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. التواصل</h3>
+        <p>لأي استفسار حول الخصوصية: privacy@smilebridge.com</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Terms of Use -->
+<div id="pageTerms" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
+  <div style="max-width: 720px; margin: 0 auto;">
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <div style="font-size: 56px; margin-bottom: 12px;">📜</div>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">سياسة الاستخدام</h1>
+        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Terms of Service — آخر تحديث: أبريل 2026</p>
+      </div>
+      <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. القبول بالشروط</h3>
+        <p>باستخدامك لمنصة سمايل بريدج، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق، يرجى عدم استخدام المنصة.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. شروط التسجيل</h3>
+        <ul style="padding-start: 20px;">
+          <li>يجب أن يكون عمرك 18 سنة أو أكثر (أو بموافقة ولي الأمر)</li>
+          <li>تقديم معلومات صحيحة ودقيقة عند التسجيل</li>
+          <li>الحفاظ على سرية بيانات الدخول</li>
+          <li>للأطباء: يجب إثبات المؤهلات والتراخيص المهنية</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. التزامات المريض</h3>
+        <ul style="padding-start: 20px;">
+          <li>التقاط صور واضحة من الزوايا المحددة</li>
+          <li>عدم استخدام صور مزيفة أو مأخوذة من مصادر أخرى</li>
+          <li>إبلاغ الطبيب بأي حالات صحية قد تؤثر على العلاج</li>
+          <li>الالتزام بالمواعيد والخطة العلاجية المتفق عليها</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. التزامات الطبيب</h3>
+        <ul style="padding-start: 20px;">
+          <li>تقديم عروض واقعية ومناسبة للحالة</li>
+          <li>الحفاظ على سرية بيانات المرضى</li>
+          <li>عدم تقديم تشخيص نهائي دون الفحص السريري</li>
+          <li>الالتزام بأخلاقيات المهنة والقوانين المعمول بها</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. المسؤولية</h3>
+        <p>سمايل بريدج هي منصة وساطة فقط وليست مقدم رعاية صحية. نحن لا نتحمل المسؤولية عن:</p>
+        <ul style="padding-start: 20px;">
+          <li>جودة أو نتيجة العلاج المقدم من الأطباء</li>
+          <li>أي نزاعات تنشأ بين المريض والطبيب</li>
+          <li>التشخيصات أو العلاجات المقترحة عبر المنصة</li>
+        </ul>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. الدفع والرسوم</h3>
+        <p>المنصة مجانية للمرضى حالياً. يتم الدفع مباشرة للطبيب حسب العرض المتفق عليه. رسوم الأطباء المميزين (مستقبلاً) تُحدد وفق باقات الاشتراك.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. إنهاء الحساب</h3>
+        <p>نحتفظ بالحق في تعليق أو إنهاء أي حساب ينتهك هذه الشروط، أو يسيء استخدام المنصة، أو يقدم معلومات مزيفة.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. القانون المعمول به</h3>
+        <p>تخضع هذه الشروط لقوانين المملكة العربية السعودية، وأي نزاع يُحل عبر المحاكم المختصة.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">9. التعديلات</h3>
+        <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إشعارك بأي تغييرات جوهرية عبر البريد الإلكتروني أو إشعار داخل التطبيق.</p>
+        <br>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">10. التواصل</h3>
+        <p>لأي استفسار: legal@smilebridge.com</p>
+      </div>
     </div>
   </div>
 </div>
@@ -1133,6 +1304,23 @@ function handleLogout() {
   document.getElementById('appPage').classList.remove('active');
   document.getElementById('loginPage').style.display = '';
   state.user = null;
+}
+
+// ==================== STATIC PAGES ====================
+function showStaticPage(page) {
+  document.getElementById('loginPage').style.display = 'none';
+  document.getElementById('pageAbout').classList.add('hidden');
+  document.getElementById('pagePrivacy').classList.add('hidden');
+  document.getElementById('pageTerms').classList.add('hidden');
+  if (page === 'about') document.getElementById('pageAbout').classList.remove('hidden');
+  if (page === 'privacy') document.getElementById('pagePrivacy').classList.remove('hidden');
+  if (page === 'terms') document.getElementById('pageTerms').classList.remove('hidden');
+}
+function hideStaticPage() {
+  document.getElementById('pageAbout').classList.add('hidden');
+  document.getElementById('pagePrivacy').classList.add('hidden');
+  document.getElementById('pageTerms').classList.add('hidden');
+  document.getElementById('loginPage').style.display = '';
 }
 
 // ==================== SIDEBAR ====================
