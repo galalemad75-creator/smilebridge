@@ -778,6 +778,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
   </div>
 </noscript>
 
+<!-- Login page language & theme toggle -->
+<div style="position: fixed; top: 16px; left: 16px; z-index: 10; display: flex; gap: 8px; align-items: center;">
+  <div class="lang-toggle" style="background: rgba(255,255,255,0.08); border-radius: 20px; border: 1px solid rgba(255,255,255,0.12); overflow: hidden;">
+    <div class="lang-btn active" data-lang="ar" onclick="switchLang('ar')" style="padding: 6px 14px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s;">عربي</div>
+    <div class="lang-btn" data-lang="en" onclick="switchLang('en')" style="padding: 6px 14px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.3s;">EN</div>
+  </div>
+  <button onclick="toggleTheme()" id="loginThemeBtn" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px;" title="Toggle theme">🌙</button>
+</div>
+
 <!-- ==================== LOGIN PAGE ==================== -->
 <div id="loginPage">
   <div class="login-container">
@@ -2738,16 +2747,30 @@ function sendMessage(input) {
 function toggleTheme() {
   state.theme = state.theme === 'light' ? 'dark' : 'light';
   document.documentElement.setAttribute('data-theme', state.theme);
-  document.getElementById('themeBtn').textContent = state.theme === 'light' ? '🌙' : '☀️';
+  const themeIcon = state.theme === 'light' ? '🌙' : '☀️';
+  document.getElementById('themeBtn').textContent = themeIcon;
+  const loginBtn = document.getElementById('loginThemeBtn');
+  if (loginBtn) loginBtn.textContent = themeIcon;
   localStorage.setItem('sb_theme', state.theme);
 }
 
 function switchLang(lang) {
   state.lang = lang;
   localStorage.setItem('sb_lang', lang);
+  // Update ALL lang buttons (login page + app header)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   document.documentElement.setAttribute('lang', lang);
+  // Style active lang button
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    if (b.dataset.lang === lang) {
+      b.style.background = 'var(--primary)';
+      b.style.color = 'white';
+    } else {
+      b.style.background = 'transparent';
+      b.style.color = 'rgba(255,255,255,0.5)';
+    }
+  });
   updateLoginUI();
   // Re-render current page with new language
   if (state.user) {
@@ -2840,10 +2863,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('sb_lang');
   if (savedLang) {
     state.lang = savedLang;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === savedLang));
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === savedLang);
+      if (b.dataset.lang === savedLang) {
+        b.style.background = 'var(--primary)';
+        b.style.color = 'white';
+      }
+    });
     document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
     document.documentElement.setAttribute('lang', savedLang);
   }
+  // Init login theme button
+  const loginBtn = document.getElementById('loginThemeBtn');
+  if (loginBtn && savedTheme) loginBtn.textContent = savedTheme === 'light' ? '🌙' : '☀️';
 
   if (!localStorage.getItem('sb_disclaimer_accepted')) {
     document.getElementById('disclaimerModal').classList.add('active');
