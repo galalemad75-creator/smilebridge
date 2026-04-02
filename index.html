@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سمايل بريدج | SmileBridge</title>
+<title>SmileBridge | Smart Dental Orthodontics Platform</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -13,7 +13,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SmileBridge">
-<meta name="description" content="سمايل بريدج — منصة ذكية لربط مرضى تقويم الأسنان بالأطباء المتخصصين. احصل على أفضل عروض التقويم من أطباء معتمدين.">
+<meta name="description" content="SmileBridge — Smart platform connecting orthodontic patients with specialists. Get the best braces offers from certified doctors.">
 <meta name="rating" content="medical">
 <meta name="content-rating" content="mature">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -771,8 +771,8 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
   <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; text-align: center; padding: 40px; background: #1E1E2E; color: white;">
     <div>
       <h1 style="font-size: 48px; margin-bottom: 16px;">🦷</h1>
-      <h2>سمايل بريدج — SmileBridge</h2>
-      <p style="color: #9E9EB8; margin-top: 12px;">يجب تفعيل JavaScript لتشغيل هذا التطبيق</p>
+      <h2>SmileBridge — Smart Dental Platform</h2>
+      <p style="color: #9E9EB8; margin-top: 12px;">JavaScript must be enabled to run this application</p>
       <p style="color: #5A5A78; margin-top: 8px;">Please enable JavaScript to use this application</p>
     </div>
   </div>
@@ -793,60 +793,60 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
     <div class="login-card">
       <div class="login-logo">
         <div class="logo-icon"><img src="icon-512.png" alt="SmileBridge" style="width: 120px; height: 120px;"></div>
-        <h1 id="loginTitle">سمايل بريدج</h1>
-        <p id="loginSubtitle">SmileBridge — منصة تقويم الأسنان الذكية</p>
+        <h1 id="loginTitle">SmileBridge</h1>
+        <p id="loginSubtitle">Smart Dental Orthodontics Platform</p>
       </div>
 
       <div class="login-tabs">
-        <div class="login-tab active" data-tab="login" onclick="switchLoginTab('login')" id="tabLogin">تسجيل الدخول</div>
-        <div class="login-tab" data-tab="register" onclick="switchLoginTab('register')" id="tabRegister">حساب جديد</div>
+        <div class="login-tab active" data-tab="login" onclick="switchLoginTab('login')" id="tabLogin">Login</div>
+        <div class="login-tab" data-tab="register" onclick="switchLoginTab('register')" id="tabRegister">Sign Up</div>
       </div>
 
       <!-- Role Selector -->
       <div class="role-selector">
         <div class="role-btn active" data-role="patient" onclick="selectRole('patient')">
           <div class="role-icon">🦷</div>
-          <div class="role-label" id="rolePatient">مريض</div>
+          <div class="role-label" id="rolePatient">Patient</div>
         </div>
         <div class="role-btn" data-role="doctor" onclick="selectRole('doctor')">
           <div class="role-icon">👨‍⚕️</div>
-          <div class="role-label" id="roleDoctor">طبيب</div>
+          <div class="role-label" id="roleDoctor">Doctor</div>
         </div>
         <div class="role-btn" data-role="admin" onclick="selectRole('admin')">
           <div class="role-icon">🛡️</div>
-          <div class="role-label" id="roleAdmin">أدمن</div>
+          <div class="role-label" id="roleAdmin">Admin</div>
         </div>
       </div>
 
       <div id="loginForm">
         <div class="form-group">
-          <label class="form-label" id="lblEmail">البريد الإلكتروني</label>
+          <label class="form-label" id="lblEmail">Email</label>
           <input type="email" class="form-input" placeholder="example@email.com" id="loginEmail" autocomplete="email">
         </div>
         <div class="form-group">
-          <label class="form-label" id="lblPassword">كلمة المرور</label>
+          <label class="form-label" id="lblPassword">Password</label>
           <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" autocomplete="current-password">
         </div>
         <div style="text-align: start; margin-bottom: 16px;">
-          <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;" id="lblForgot">نسيت كلمة المرور؟ 🔑</a>
+          <a href="#" onclick="switchLoginTab('forgot'); return false;" style="color: var(--primary-light); font-size: 13px; font-weight: 500;" id="lblForgot">Forgot Password? 🔑</a>
         </div>
-        <button class="btn btn-primary" onclick="handleLogin()" id="lblLoginBtn">تسجيل الدخول ✨</button>
+        <button class="btn btn-primary" onclick="handleLogin()" id="lblLoginBtn">Login ✨</button>
       </div>
 
       <!-- Forgot Password Form -->
       <div id="forgotForm" class="hidden">
         <div style="text-align: center; margin-bottom: 24px;">
           <div style="font-size: 48px; margin-bottom: 8px;">🔐</div>
-          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblForgotTitle">استعادة كلمة المرور</h3>
-          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblForgotDesc">أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين</p>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblForgotTitle">Reset Password</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblForgotDesc">Enter your email and we'll send you a reset link</p>
         </div>
         <div class="form-group">
-          <label class="form-label" id="lblEmail2">البريد الإلكتروني</label>
+          <label class="form-label" id="lblEmail2">Email</label>
           <input type="email" class="form-input" placeholder="example@email.com" id="forgotEmail" autocomplete="email">
         </div>
-        <button class="btn btn-primary" onclick="handleForgotPassword()" id="lblSendReset">إرسال رابط الاستعادة 📧</button>
+        <button class="btn btn-primary" onclick="handleForgotPassword()" id="lblSendReset">Send Reset Link 📧</button>
         <div style="text-align: center; margin-top: 16px;">
-          <a href="#" onclick="switchLoginTab('login'); return false;" style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblBackLogin">العودة لتسجيل الدخول ←</a>
+          <a href="#" onclick="switchLoginTab('login'); return false;" style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblBackLogin">← Back to Login</a>
         </div>
       </div>
 
@@ -854,55 +854,55 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       <div id="resetForm" class="hidden">
         <div style="text-align: center; margin-bottom: 24px;">
           <div style="font-size: 48px; margin-bottom: 8px;">🔑</div>
-          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblResetTitle">تعيين كلمة مرور جديدة</h3>
-          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblResetDesc">أدخل كلمة المرور الجديدة</p>
+          <h3 style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;" id="lblResetTitle">Set New Password</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 13px;" id="lblResetDesc">Enter your new password</p>
         </div>
         <div class="form-group">
-          <label class="form-label" id="lblNewPass">كلمة المرور الجديدة</label>
+          <label class="form-label" id="lblNewPass">New Password</label>
           <input type="password" class="form-input" placeholder="••••••••" id="newPassword" autocomplete="new-password">
         </div>
         <div class="form-group">
-          <label class="form-label" id="lblConfirmPass">تأكيد كلمة المرور</label>
+          <label class="form-label" id="lblConfirmPass">Confirm Password</label>
           <input type="password" class="form-input" placeholder="••••••••" id="confirmPassword" autocomplete="new-password">
         </div>
-        <button class="btn btn-primary" onclick="handleResetPassword()" id="lblSetPass">تعيين كلمة المرور ✅</button>
+        <button class="btn btn-primary" onclick="handleResetPassword()" id="lblSetPass">Set Password ✅</button>
       </div>
 
       <div id="registerForm" class="hidden">
         <div class="form-group">
-          <label class="form-label">الاسم الكامل</label>
-          <input type="text" class="form-input" placeholder="أدخل اسمك" autocomplete="name">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Enter your name" autocomplete="name">
         </div>
         <div class="form-group">
-          <label class="form-label">البريد الإلكتروني</label>
+          <label class="form-label">Email</label>
           <input type="email" class="form-input" placeholder="example@email.com" autocomplete="email">
         </div>
         <div class="form-group">
-          <label class="form-label">كلمة المرور</label>
+          <label class="form-label">Password</label>
           <input type="password" class="form-input" placeholder="••••••••" autocomplete="new-password">
         </div>
         <div class="form-group hidden" id="doctorSpecialty">
-          <label class="form-label">التخصص</label>
+          <label class="form-label">Specialty</label>
           <select class="form-input form-select">
-            <option>تقويم أسنان</option>
-            <option>جراحة فم وفكين</option>
-            <option>طب أسنان الأطفال</option>
-            <option>تجميل أسنان</option>
+            <option>Orthodontics</option>
+            <option>Oral & Maxillofacial Surgery</option>
+            <option>Pediatric Dentistry</option>
+            <option>Cosmetic Dentistry</option>
           </select>
         </div>
-        <button class="btn btn-primary" onclick="handleLogin()">إنشاء الحساب 🚀</button>
+        <button class="btn btn-primary" onclick="handleLogin()">Create Account 🚀</button>
       </div>
 
       <!-- Footer Links -->
       <div style="text-align: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);">
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="#" onclick="showStaticPage('about'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">من نحن</a>
+          <a href="#" onclick="showStaticPage('about'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">About Us</a>
           <span style="color: rgba(255,255,255,0.15);">|</span>
-          <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">سياسة الخصوصية</a>
+          <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Privacy Policy</a>
           <span style="color: rgba(255,255,255,0.15);">|</span>
-          <a href="#" onclick="showStaticPage('terms'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">سياسة الاستخدام</a>
+          <a href="#" onclick="showStaticPage('terms'); return false;" style="color: rgba(255,255,255,0.4); font-size: 12px; transition: color 0.2s;" onmouseover="this.style.color='var(--primary-light)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Terms of Service</a>
         </div>
-        <p style="color: rgba(255,255,255,0.2); font-size: 11px; margin-top: 12px;">© 2026 SmileBridge — جميع الحقوق محفوظة</p>
+        <p style="color: rgba(255,255,255,0.2); font-size: 11px; margin-top: 12px;">© 2026 SmileBridge — All rights reserved</p>
       </div>
     </div>
   </div>
@@ -912,32 +912,32 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <!-- About Us -->
 <div id="pageAbout" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
   <div style="max-width: 720px; margin: 0 auto;">
-    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← Back</a>
     <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
       <div style="text-align: center; margin-bottom: 32px;">
         <div style="font-size: 56px; margin-bottom: 12px;">😁</div>
-        <h1 style="font-size: 32px; font-weight: 800; color: white;">من نحن</h1>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">About Us</h1>
         <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">About SmileBridge</p>
       </div>
       <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
-        <p><strong style="color: white;">سمايل بريدج</strong> هي منصة رقمية ذكية تهدف إلى تسهيل حصول المرضى على خدمات تقويم الأسنان من خلال ربطهم بأفضل الأطباء المتخصصين بطريقة شفافة وسهلة.</p>
+        <p><strong style="color: white;">SmileBridge</strong> is a smart digital platform that makes it easy for patients to access orthodontic services by connecting them with the best specialists in a transparent and simple way.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">🎯 رسالتنا</h3>
-        <p>نسعى لتمكين كل مريض من الوصول إلى أفضل رعاية تقويمية بأسعار تنافسية، من خلال منصة تتيح للأطباء التنافس على تقديم أفضل العروض.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">🎯 Our Mission</h3>
+        <p>We empower every patient to access the best orthodontic care at competitive prices, through a platform that lets doctors compete to offer the best deals.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">👁️ رؤيتنا</h3>
-        <p>أن نكون المنصة الرائدة في منطقة الشرق الأوسط لربط مرضى تقويم الأسنان بالأطباء المتخصصين، مع ضمان الجودة والشفافية في كل خطوة.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">👁️ Our Vision</h3>
+        <p>To become the leading platform in the Middle East for connecting orthodontic patients with specialists, ensuring quality and transparency at every step.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">💡 كيف نعمل؟</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">💡 How It Works</h3>
         <ul style="padding-start: 20px;">
-          <li>📸 المريض يلتقط صور أسنانه من الزوايا الطبية المحددة</li>
-          <li>📋 يتم نشر الحالة بشكل مجهول على المنصة</li>
-          <li>👨‍⚕️ الأطباء المتخصصون يتصفحون الحالة ويقدّمون عروضهم</li>
-          <li>💰 المريض يقارن العروض (السعر، المدة، التقييمات) ويختار</li>
-          <li>⭐ بعد الانتهاء، المريض يقيّم تجربته</li>
+          <li>📸 The patient takes photos of their teeth from the specified medical angles</li>
+          <li>📋 The case is posted anonymously on the platform</li>
+          <li>👨‍⚕️ Specialists review the case and submit their offers</li>
+          <li>💰 The patient compares offers (price, duration, ratings) and chooses</li>
+          <li>⭐ After completion, the patient rates their experience</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">📞 تواصل معنا</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">📞 Contact Us</h3>
         <p>📧 support@smilebridge.com</p>
         <p>📱 +966 XX XXX XXXX</p>
       </div>
@@ -948,70 +948,70 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <!-- Privacy Policy -->
 <div id="pagePrivacy" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
   <div style="max-width: 720px; margin: 0 auto;">
-    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← Back</a>
     <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
       <div style="text-align: center; margin-bottom: 32px;">
         <div style="font-size: 56px; margin-bottom: 12px;">🔒</div>
-        <h1 style="font-size: 32px; font-weight: 800; color: white;">سياسة الخصوصية</h1>
-        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Privacy Policy — آخر تحديث: أبريل 2026</p>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">Privacy Policy</h1>
+        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Privacy Policy — Last updated: April 2026</p>
       </div>
       <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. المعلومات التي نجمعها</h3>
-        <p>نجمع المعلومات التالية عند استخدامك للمنصة:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. Information We Collect</h3>
+        <p>We collect the following information when you use the platform:</p>
         <ul style="padding-start: 20px;">
-          <li><strong style="color: white;">معلومات الحساب:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، نوع الحساب (مريض/طبيب)</li>
-          <li><strong style="color: white;">صور الأسنان:</strong> الصور التي ترفعها لعرض حالتك على الأطباء</li>
-          <li><strong style="color: white;">معلومات الطبيب:</strong> التخصص، سنوات الخبرة، المؤهلات، التراخيص</li>
-          <li><strong style="color: white;">سجل النشاط:</strong> العروض المقدمة، الرسائل، التقييمات</li>
+          <li><strong style="color: white;">Account Info:</strong> Name, email, phone number, account type (patient/doctor)</li>
+          <li><strong style="color: white;">Dental Photos:</strong> Photos you upload to present your case to doctors</li>
+          <li><strong style="color: white;">Doctor Info:</strong> Specialty, years of experience, qualifications, licenses</li>
+          <li><strong style="color: white;">Activity Log:</strong> Submitted offers, messages, reviews</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. كيف نستخدم معلوماتك</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. How We Use Your Information</h3>
         <ul style="padding-start: 20px;">
-          <li>تقديم خدمات المنصة وربط المرضى بالأطباء</li>
-          <li>تحسين تجربة المستخدم وتطوير المنصة</li>
-          <li>إرسال إشعارات حول العروض الجديدة والمواعيد</li>
-          <li>ضمان أمان المنصة ومنع الاستخدام المسيء</li>
+          <li>Providing platform services and connecting patients with doctors</li>
+          <li>Improving user experience and developing the platform</li>
+          <li>Sending notifications about new offers and appointments</li>
+          <li>Ensuring platform security and preventing misuse</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. حماية بياناتك الصحية</h3>
-        <p>بصفتنا منصة تقدم خدمات ذات صلة بالصحة، نولي اهتماماً خاصاً لحماية بياناتك الصحية:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. Health Data Protection</h3>
+        <p>As a platform providing health-related services, we take special care to protect your health data:</p>
         <ul style="padding-start: 20px;">
-          <li>صور الأسنان <strong>مشفّرة</strong> أثناء النقل والتخزين باستخدام بروتوكولات SSL/TLS</li>
-          <li>صور الأسنان تُعرض على الأطباء <strong>بشكل مجهول</strong> (بدون اسم المريض الحقيقي) حتى يتم قبول العرض</li>
-          <li>نطبق معايير أمان تتوافق مع أفضل الممارسات لحماية البيانات الصحية (نظام HIPAA كمرجع)</li>
-          <li>لا نستخدم بياناتك الصحية لأغراض تسويقية أو بيعها لأطراف ثالثة</li>
-          <li>يتم حذف صور الحالات المكتملة تلقائياً بعد 12 شهراً من إغلاق الحالة</li>
+          <li>Dental photos are <strong>encrypted</strong> during transfer and storage using SSL/TLS protocols</li>
+          <li>Photos are shown to doctors <strong>anonymously</strong> (without the patient's real name) until an offer is accepted</li>
+          <li>We apply security standards aligned with best practices for health data protection (HIPAA as reference)</li>
+          <li>We do not use your health data for marketing or sell it to third parties</li>
+          <li>Completed case photos are automatically deleted 12 months after case closure</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. مشاركة المعلومات</h3>
-        <p>لا نبيع أو نشارك بياناتك الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. Information Sharing</h3>
+        <p>We do not sell or share your personal data with third parties except in the following cases:</p>
         <ul style="padding-start: 20px;">
-          <li>مع الطبيب المختار بعد قبول العرض (معلومات التواصل)</li>
-          <li>عند الطلب القانوني من الجهات المختصة</li>
-          <li>مزودي الخدمات التقنية (استضافة، تحليلات) بموجب اتفاقيات سرية</li>
+          <li>With the selected doctor after offer acceptance (contact information)</li>
+          <li>When legally required by authorized entities</li>
+          <li>Technical service providers (hosting, analytics) under confidentiality agreements</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. الاحتفاظ بالبيانات</h3>
-        <p>نحتفظ ببياناتك طالما كان حسابك نشطاً. بعد طلب الحذف:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. Data Retention</h3>
+        <p>We retain your data as long as your account is active. After a deletion request:</p>
         <ul style="padding-start: 20px;">
-          <li>يتم حذف جميع بياناتك الشخصية خلال 30 يوماً</li>
-          <li>قد نحتفظ ببعض البيانات المجهّلة (مجمّعة) لأغراض إحصائية</li>
-          <li>نحتفظ بسجلات معاملات مالية مطلوبة قانونياً لمدة 7 سنوات</li>
+          <li>All personal data is deleted within 30 days</li>
+          <li>We may retain some anonymized (aggregated) data for statistical purposes</li>
+          <li>We retain financial transaction records legally required for 7 years</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. حقوقك</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. Your Rights</h3>
         <ul style="padding-start: 20px;">
-          <li>طلب نسخة من بياناتك الشخصية</li>
-          <li>طلب تصحيح أي معلومات غير دقيقة</li>
-          <li>طلب حذف حسابك وجميع بياناتك</li>
-          <li>الاعتراض على معالجة بياناتك</li>
+          <li>Request a copy of your personal data</li>
+          <li>Request correction of any inaccurate information</li>
+          <li>Request deletion of your account and all your data</li>
+          <li>Object to the processing of your data</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. ملفات تعريف الارتباط (Cookies)</h3>
-        <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك وتذكر تفضيلاتك. يمكنك التحكم بها من إعدادات المتصفح.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. Cookies</h3>
+        <p>We use cookies to improve your experience and remember your preferences. You can manage them through your browser settings.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. التواصل</h3>
-        <p>لأي استفسار حول الخصوصية: privacy@smilebridge.com</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. Contact</h3>
+        <p>For any privacy inquiries: privacy@smilebridge.com</p>
       </div>
     </div>
   </div>
@@ -1020,71 +1020,71 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <!-- Terms of Use -->
 <div id="pageTerms" class="hidden" style="min-height: 100vh; background: linear-gradient(135deg, #1E1E2E 0%, #2D1B69 50%, #1E1E2E 100%); padding: 40px 20px;">
   <div style="max-width: 720px; margin: 0 auto;">
-    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← العودة</a>
+    <a href="#" onclick="hideStaticPage(); return false;" style="color: rgba(255,255,255,0.5); font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">← Back</a>
     <div style="background: rgba(30,30,46,0.85); backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); padding: 48px;">
       <div style="text-align: center; margin-bottom: 32px;">
         <div style="font-size: 56px; margin-bottom: 12px;">📜</div>
-        <h1 style="font-size: 32px; font-weight: 800; color: white;">سياسة الاستخدام</h1>
-        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Terms of Service — آخر تحديث: أبريل 2026</p>
+        <h1 style="font-size: 32px; font-weight: 800; color: white;">Terms of Service</h1>
+        <p style="color: rgba(255,255,255,0.5); margin-top: 4px;">Terms of Service — Last updated: April 2026</p>
       </div>
       <div style="color: rgba(255,255,255,0.75); line-height: 2; font-size: 15px;">
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. القبول بالشروط</h3>
-        <p>باستخدامك لمنصة سمايل بريدج، فإنك توافق على الالتزام بهذه الشروط والأحكام. إذا كنت لا توافق، يرجى عدم استخدام المنصة.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">1. Acceptance of Terms</h3>
+        <p>By using the SmileBridge platform, you agree to comply with these terms and conditions. If you do not agree, please do not use the platform.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. شروط التسجيل والسن</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">2. Registration & Age Requirements</h3>
         <ul style="padding-start: 20px;">
-          <li>يجب أن يكون عمرك <strong>18 سنة أو أكثر</strong> للتسجيل</li>
-          <li>للمستخدمين بين 13-17 سنة: يتطلب موافقة خطية من ولي الأمر</li>
-          <li>المنصة غير متاحة للمستخدمين أقل من 13 سنة</li>
-          <li>تقديم معلومات صحيحة ودقيقة عند التسجيل</li>
-          <li>الحفاظ على سرية بيانات الدخول</li>
-          <li>للأطباء: يجب إثبات المؤهلات والتراخيص المهنية</li>
+          <li>You must be <strong>18 years or older</strong> to register</li>
+          <li>Users aged 13-17: requires written parental consent</li>
+          <li>The platform is not available to users under 13</li>
+          <li>Provide accurate and truthful information during registration</li>
+          <li>Keep your login credentials confidential</li>
+          <li>Doctors: must provide proof of qualifications and professional licenses</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. التزامات المريض</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">3. Patient Obligations</h3>
         <ul style="padding-start: 20px;">
-          <li>التقاط صور واضحة من الزوايا المحددة</li>
-          <li>عدم استخدام صور مزيفة أو مأخوذة من مصادر أخرى</li>
-          <li>إبلاغ الطبيب بأي حالات صحية قد تؤثر على العلاج</li>
-          <li>الالتزام بالمواعيد والخطة العلاجية المتفق عليها</li>
+          <li>Take clear photos from the specified angles</li>
+          <li>Do not use fake photos or images from other sources</li>
+          <li>Inform the doctor of any health conditions that may affect treatment</li>
+          <li>Adhere to agreed-upon appointments and treatment plans</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. التزامات الطبيب</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">4. Doctor Obligations</h3>
         <ul style="padding-start: 20px;">
-          <li>تقديم عروض واقعية ومناسبة للحالة</li>
-          <li>الحفاظ على سرية بيانات المرضى</li>
-          <li>عدم تقديم تشخيص نهائي دون الفحص السريري</li>
-          <li>الالتزام بأخلاقيات المهنة والقوانين المعمول بها</li>
+          <li>Provide realistic and appropriate offers for each case</li>
+          <li>Maintain patient data confidentiality</li>
+          <li>Do not provide final diagnoses without direct clinical examination</li>
+          <li>Comply with professional ethics and applicable laws</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. المسؤولية</h3>
-        <p>سمايل بريدج هي منصة وساطة فقط وليست مقدم رعاية صحية. نحن لا نتحمل المسؤولية عن:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">5. Liability</h3>
+        <p>SmileBridge is a mediation platform only and is not a healthcare provider. We are not responsible for:</p>
         <ul style="padding-start: 20px;">
-          <li>جودة أو نتيجة العلاج المقدم من الأطباء</li>
-          <li>أي نزاعات تنشأ بين المريض والطبيب</li>
-          <li>التشخيصات أو العلاجات المقترحة عبر المنصة</li>
+          <li>The quality or outcome of treatment provided by doctors</li>
+          <li>Any disputes arising between patient and doctor</li>
+          <li>Diagnoses or treatments suggested through the platform</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. الدفع والرسوم</h3>
-        <p>المنصة مجانية للمرضى حالياً. يتم الدفع مباشرة للطبيب حسب العرض المتفق عليه. رسوم الأطباء المميزين (مستقبلاً) تُحدد وفق باقات الاشتراك.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">6. Payments & Fees</h3>
+        <p>The platform is currently free for patients. Payment is made directly to the doctor based on the agreed offer. Premium doctor fees (in the future) will be determined by subscription plans.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. إنهاء الحساب وحذف البيانات</h3>
-        <p>نحتفظ بالحق في تعليق أو إنهاء أي حساب ينتهك هذه الشروط، أو يسيء استخدام المنصة، أو يقدم معلومات مزيفة.</p>
-        <p style="margin-top: 8px;">لطلب حذف حسابك وجميع بياناتك:</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">7. Account Termination & Data Deletion</h3>
+        <p>We reserve the right to suspend or terminate any account that violates these terms, misuses the platform, or provides false information.</p>
+        <p style="margin-top: 8px;">To request deletion of your account and all your data:</p>
         <ul style="padding-start: 20px;">
-          <li>من داخل التطبيق: الإعدادات ← إدارة البيانات والحسابات ← طلب حذف الحساب</li>
-          <li>عبر البريد الإلكتروني: <strong>privacy@smilebridge.com</strong></li>
-          <li>يتم إتمام الحذف خلال <strong>30 يوماً</strong> من الطلب</li>
-          <li>بعض البيانات المجمّعة قد تبقى لأغراض إحصائية بدون ربطها بهويتك</li>
+          <li>From within the app: Settings → Data & Account Management → Request Account Deletion</li>
+          <li>By email: <strong>privacy@smilebridge.com</strong></li>
+          <li>Deletion is completed within <strong>30 days</strong> of the request</li>
+          <li>Some aggregated data may be retained for statistical purposes without linking to your identity</li>
         </ul>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. القانون المعمول به</h3>
-        <p>تخضع هذه الشروط لقوانين المملكة العربية السعودية، وأي نزاع يُحل عبر المحاكم المختصة.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">8. Governing Law</h3>
+        <p>These terms are governed by the laws of the Kingdom of Saudi Arabia, and any disputes shall be resolved through competent courts.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">9. التعديلات</h3>
-        <p>نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سيتم إشعارك بأي تغييرات جوهرية عبر البريد الإلكتروني أو إشعار داخل التطبيق.</p>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">9. Amendments</h3>
+        <p>We reserve the right to modify these terms at any time. You will be notified of any material changes via email or in-app notification.</p>
         <br>
-        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">10. التواصل</h3>
+        <h3 style="color: white; font-size: 17px; margin-bottom: 8px;">10. Contact</h3>
         <p>لأي استفسار: legal@smilebridge.com</p>
       </div>
     </div>
@@ -1095,23 +1095,23 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <div class="modal-overlay" id="disclaimerModal" style="z-index: 3000;">
   <div class="modal" style="max-width: 520px;">
     <div class="modal-header">
-      <h3 class="modal-title" id="lblDisclaimerTitle">⚠️ إخلاء المسؤولية الطبية</h3>
+      <h3 class="modal-title" id="lblDisclaimerTitle">⚠️ Medical Disclaimer</h3>
     </div>
     <div class="modal-body" style="line-height: 2;">
       <p style="margin-bottom: 12px;"><strong>Medical Disclaimer</strong></p>
       <ul style="padding-inline-start: 20px; color: var(--text-secondary); font-size: 14px;">
-        <li>هذه المنصة هي <strong>أداة وساطة</strong> فقط لربط المرضى بالأطباء المتخصصين في تقويم الأسنان.</li>
-        <li>التشخيصات والعروض المقدمة عبر المنصة هي <strong>تشخيصات أولية</strong> وليست بديلاً عن الفحص السريري المباشر.</li>
-        <li>يجب على المريض <strong>استشارة الطبيب المختص شخصياً</strong> قبل اتخاذ أي قرار علاجي.</li>
-        <li>المنصة <strong>لا تقدم نصائح طبية</strong> ولا تتحمل مسؤولية نتائج العلاج.</li>
-        <li>صور الأسنان المرفوعة تُستخدم فقط لأغراض <strong>التقييم الأولي</strong> من قبل أطباء مسجلين.</li>
+        <li>This platform is a <strong>mediation tool only</strong>, connecting patients with orthodontic specialists.</li>
+        <li>Diagnoses and offers provided through the platform are <strong>preliminary</strong> and not a substitute for direct clinical examination.</li>
+        <li>Patients must <strong>consult a specialist in person</strong> before making any treatment decisions.</li>
+        <li>The platform <strong>does not provide medical advice</strong> and is not responsible for treatment outcomes.</li>
+        <li>Dental photos are used only for <strong>preliminary evaluation</strong> by registered doctors.</li>
       </ul>
       <div style="background: rgba(253,203,110,0.15); border: 1px solid var(--warning); border-radius: 10px; padding: 12px; margin-top: 16px; font-size: 13px;">
-        ⚠️ إذا كنت تعاني من حالة طبية طارئة، يرجى التوجه لأقرب مركز طبي أو الاتصال بالطوارئ.
+        ⚠️ If you are experiencing a medical emergency, please visit the nearest medical center or call emergency services.
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-primary" onclick="acceptDisclaimer()" id="lblAgreeBtn">أوافق وأفهم ✅</button>
+      <button class="btn btn-primary" onclick="acceptDisclaimer()" id="lblAgreeBtn">I Agree & Understand ✅</button>
     </div>
   </div>
 </div>
@@ -1120,15 +1120,15 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 2500; background: var(--bg-card); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); padding: 20px 24px; display: none;">
   <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
     <div style="flex: 1; min-width: 300px;">
-      <strong style="font-size: 15px;" id="lblCookieTitle">🍪 نستخدم ملفات تعريف الارتباط</strong>
+      <strong style="font-size: 15px;" id="lblCookieTitle">🍪 We use cookies</strong>
       <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;" id="lblCookieText">
-        نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على 
-        <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: var(--primary);">سياسة الخصوصية</a> الخاصة بنا.
+        We use cookies and analytics data to improve your experience and provide better services. By agreeing, you accept our 
+        <a href="#" onclick="showStaticPage('privacy'); return false;" style="color: var(--primary);">Privacy Policy</a>.
       </p>
     </div>
     <div style="display: flex; gap: 8px;">
-      <button class="btn btn-secondary btn-sm" onclick="rejectCookies()">رفض</button>
-      <button class="btn btn-primary btn-sm" onclick="acceptCookies()">قبول الكل ✅</button>
+      <button class="btn btn-secondary btn-sm" onclick="rejectCookies()">Reject</button>
+      <button class="btn btn-primary btn-sm" onclick="acceptCookies()">Accept All ✅</button>
     </div>
   </div>
 </div>
@@ -1139,17 +1139,17 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="logo-sm"><img src="icon-192.png" alt="SB" style="width: 40px; height: 40px; border-radius: 10px;"></div>
-      <div class="logo-text">سمايل بريدج</div>
+      <div class="logo-text">SmileBridge</div>
     </div>
     <nav class="sidebar-nav" id="sidebarNav">
       <!-- Dynamic based on role -->
     </nav>
     <div class="sidebar-footer">
       <div class="sidebar-user" onclick="handleLogout()">
-        <div class="avatar avatar-patient" id="sidebarAvatar">م</div>
+        <div class="avatar avatar-patient" id="sidebarAvatar">M</div>
         <div class="user-info">
-          <div class="user-name" id="sidebarUserName">محمد أحمد</div>
-          <div class="user-role" id="sidebarUserRole">مريض</div>
+          <div class="user-name" id="sidebarUserName">Mohamed Ahmed</div>
+          <div class="user-role" id="sidebarUserRole">Patient</div>
         </div>
       </div>
     </div>
@@ -1161,19 +1161,19 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
     <header class="main-header">
       <div class="header-left">
         <button class="icon-btn mobile-menu-btn" onclick="toggleSidebar()">☰</button>
-        <h2 class="header-title" id="pageTitle">لوحة التحكم</h2>
+        <h2 class="header-title" id="pageTitle">Dashboard</h2>
       </div>
       <div class="header-right">
         <div class="header-search">
           <span>🔍</span>
-          <input type="text" placeholder="بحث...">
+          <input type="text" placeholder="Search...">
         </div>
         <div class="lang-toggle">
           <div class="lang-btn active" data-lang="ar" onclick="switchLang('ar')">عربي</div>
           <div class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</div>
         </div>
-        <button class="icon-btn" onclick="toggleTheme()" id="themeBtn" title="تبديل الوضع">🌙</button>
-        <button class="icon-btn" title="الإشعارات">
+        <button class="icon-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">🌙</button>
+        <button class="icon-btn" title="Notifications">
           🔔<span class="notif-dot"></span>
         </button>
       </div>
@@ -1182,8 +1182,8 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
     <!-- Ad Banner Top -->
     <div class="page-content">
       <div class="ad-banner" id="adTop">
-        <span class="badge badge-warning" style="margin-inline-end: 8px;">إعلان</span>
-        <span style="font-size: 12px;">Google AdSense — يتم عرض إعلانات لدعم المنصة</span>
+        <span class="badge badge-warning" style="margin-inline-end: 8px;">Ad</span>
+        <span style="font-size: 12px;">Google AdSense — Ads shown to support the platform</span>
       </div>
 
       <div style="display: flex; gap: 24px;">
@@ -1197,16 +1197,16 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
         <!-- Sidebar Ad -->
         <div style="width: 200px; flex-shrink: 0;" class="ad-sidebar-col">
           <div class="ad-sidebar">
-            <span class="badge badge-warning" style="margin-bottom: 8px;">إعلان</span>
-            <span style="font-size: 12px;">إعلان ممول</span>
+            <span class="badge badge-warning" style="margin-bottom: 8px;">Ad</span>
+            <span style="font-size: 12px;">Sponsored</span>
           </div>
         </div>
       </div>
 
       <!-- Ad Banner Bottom -->
       <div class="ad-banner" id="adBottom">
-        <span class="badge badge-warning" style="margin-inline-end: 8px;">إعلان</span>
-        <span style="font-size: 12px;">Google AdSense — يتم عرض إعلانات لدعم المنصة</span>
+        <span class="badge badge-warning" style="margin-inline-end: 8px;">Ad</span>
+        <span style="font-size: 12px;">Google AdSense — Ads shown to support the platform</span>
       </div>
     </div>
   </div>
@@ -1225,272 +1225,6 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
 <script>
 // ==================== INTERNATIONALIZATION ====================
 const translations = {
-  ar: {
-    // Login
-    loginTitle: 'سمايل بريدج',
-    loginSubtitle: 'SmileBridge — منصة تقويم الأسنان الذكية',
-    loginTab: 'تسجيل الدخول',
-    registerTab: 'حساب جديد',
-    email: 'البريد الإلكتروني',
-    password: 'كلمة المرور',
-    forgotPassword: 'نسيت كلمة المرور؟ 🔑',
-    loginBtn: 'تسجيل الدخول ✨',
-    // Roles
-    patient: 'مريض',
-    doctor: 'طبيب',
-    admin: 'أدمن',
-    // Register
-    fullName: 'الاسم الكامل',
-    specialty: 'التخصص',
-    createAccount: 'إنشاء الحساب 🚀',
-    // Forgot
-    forgotTitle: 'استعادة كلمة المرور',
-    forgotDesc: 'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين',
-    sendReset: 'إرسال رابط الاستعادة 📧',
-    backToLogin: 'العودة لتسجيل الدخول ←',
-    // Reset
-    resetTitle: 'تعيين كلمة مرور جديدة',
-    resetDesc: 'أدخل كلمة المرور الجديدة',
-    newPassword: 'كلمة المرور الجديدة',
-    confirmPassword: 'تأكيد كلمة المرور',
-    setNewPassword: 'تعيين كلمة المرور ✅',
-    // Sidebar
-    dashboard: 'لوحة التحكم',
-    myCases: 'حالاتي',
-    uploadPhotos: 'رفع صور',
-    offers: 'العروض المقدمة',
-    messages: 'الرسائل',
-    history: 'سجل الحالات',
-    browseCases: 'تصفح الحالات',
-    myOffers: 'عروضي',
-    accepted: 'الحالات المقبولة',
-    ratings: 'التقييمات',
-    users: 'إدارة المستخدمين',
-    casesMgmt: 'إدارة الحالات',
-    adMgmt: 'الإعلانات',
-    reports: 'التقارير',
-    settings: 'إعدادات النظام',
-    // Nav sections
-    navMain: 'رئيسي',
-    navServices: 'الخدمات',
-    navSystem: 'النظام',
-    // Header
-    search: 'بحث...',
-    notifications: 'الإشعارات',
-    // Dashboard
-    activeCases: 'حالاتي النشطة',
-    receivedOffers: 'عروض مستلمة',
-    unreadMessages: 'رسائل غير مقروءة',
-    myDoctorRating: 'تقييم طبيبي',
-    newThisWeek: '↑ حالة جديدة هذا الأسبوع',
-    newOffers: '↑ 3 عروض جديدة',
-    currentCases: 'حالاتي الحالية',
-    latestOffers: 'آخر العروض',
-    viewAll: 'عرض الكل',
-    uploadNewCase: '📸 رفع حالة جديدة',
-    // Cases
-    all: 'الكل',
-    active: 'نشطة',
-    inProgress: 'قيد العلاج',
-    completed: 'مكتملة',
-    new: 'جديدة',
-    offersCount: 'عروض',
-    viewOffers: 'عرض العروض',
-    submitOffer: 'تقديم عرض',
-    // Upload
-    photoGuide: '📸 دليل التقاط الصور',
-    photoGuideDesc: 'التقط 6 صور بالزوايا المحددة أدناه للحصول على أفضل تقييم من الأطباء',
-    photoSlots: ['الابتسامة الأمامية الكاملة', 'الجانب الأيمن — إطباق جانبي', 'الجانب الأيسر — إطباق جانبي', 'الفك العلوي من الأعلى', 'الفك السفلي من الأسفل', 'الأمام مع فتح الفم'],
-    caseDescription: 'وصف الحالة (اختياري)',
-    casePlaceholder: 'صف مشكلتك بإيجاز... أي تفاصيل تساعد الطبيب على فهم حالتك بشكل أفضل',
-    submitCaseBtn: 'إرسال الحالة للمراجعة 🚀',
-    saveDraft: 'حفظ كمسودة',
-    uploadSuccess: 'تم رفع الصورة بنجاح! ✓',
-    caseSubmitted: 'تم إرسال الحالة بنجاح! سيتم إشعار الأطباء المتخصصين 🎉',
-    // Offers page
-    offersReceived: 'عروض من أطباء متخصصين',
-    sortByPrice: 'السعر',
-    sortByRating: 'التقييم',
-    sortByDuration: 'المدة',
-    bestPrice: '✅ الأفضل سعراً',
-    selectDoctor: 'اختيار الطبيب',
-    doctorSelected: (name) => `تم اختيار ${name} بنجاح! 🎉 سيتم التواصل معك قريباً`,
-    // Offer details
-    riyal: 'ريال',
-    month: 'شهر',
-    months: 'أشهر',
-    experience: 'سنوات خبرة',
-    review: 'تقييم',
-    reviews: 'تقييمات',
-    // Messages
-    searchConversations: 'بحث في المحادثات...',
-    online: 'متصل الآن',
-    typeMessage: 'اكتب رسالتك...',
-    // Doctor
-    availableCases: 'حالات متاحة',
-    newToday: '↑ 4 جديدة اليوم',
-    submittedOffers: 'عروضي المقدمة',
-    myAcceptedCases: 'حالات مقبولة',
-    thisMonth: '↑ 2 هذا الشهر',
-    avgRating: 'متوسط التقييم',
-    ratingCount: (n) => `من ${n} تقييم`,
-    newCases: 'حالات جديدة متاحة',
-    allAvailable: (n) => `الكل (${n})`,
-    newFilter: 'جديدة',
-    complex: 'معقدة',
-    urgent: 'عاجلة',
-    crowding: 'ازدحام',
-    overlay: 'تراكب',
-    pending: 'قيد الانتظار',
-    acceptedOffer: 'مقبول ✓',
-    rejected: 'مرفوض',
-    patientCase: 'حالة',
-    // Submit offer modal
-    submitOfferTitle: (id) => `تقديم عرض للحالة #${id}`,
-    priceRiyal: 'السعر (ريال)',
-    pricePlaceholder: 'مثال: 3500',
-    durationMonths: 'مدة العلاج المتوقعة (بالأشهر)',
-    durationPlaceholder: 'مثال: 12',
-    additionalNote: 'ملاحظة إضافية (اختياري)',
-    notePlaceholder: 'أضف تفاصيل عن خطة العلاج المقترحة...',
-    sendOffer: 'إرسال العرض 🚀',
-    cancel: 'إلغاء',
-    offerSent: 'تم إرسال العرض بنجاح! ✅',
-    // Ratings
-    basedOn: (n) => `بناءً على ${n} تقييم`,
-    // Admin
-    totalUsers: 'إجمالي المستخدمين',
-    registeredDoctors: 'طبيب مسجّل',
-    totalCases: 'إجمالي الحالات',
-    adRevenue: 'إيرادات الإعلانات',
-    growthThisMonth: '↑ 12% هذا الشهر',
-    newDoctors: '↑ 18 جدد',
-    thisWeek: '↑ 45 هذا الأسبوع',
-    adRevenueThisMonth: '↑ 8% هذا الشهر',
-    userGrowth: 'نمو المستخدمين (آخر 6 أشهر)',
-    recentActivity: 'آخر النشاطات',
-    months_ar: ['سبت', 'أكت', 'نوف', 'ديس', 'ينا', 'فبر'],
-    // Users table
-    user: 'المستخدم',
-    emailCol: 'البريد',
-    role: 'الدور',
-    status: 'الحالة',
-    joinDate: 'تاريخ التسجيل',
-    actions: 'إجراءات',
-    edit: 'تعديل',
-    block: 'حظر',
-    activeStatus: 'نشط',
-    pendingStatus: 'قيد المراجعة',
-    // Cases management
-    caseNumber: 'رقم',
-    patientCol: 'المريض',
-    description: 'الوصف',
-    offersCol: 'العروض',
-    statusCol: 'الحالة',
-    details: 'تفاصيل',
-    reported: 'مبلغ عنها',
-    // Ads
-    adsenseSettings: 'إعدادات Google AdSense',
-    publisherId: 'كود AdSense Publisher ID',
-    topBannerSlot: 'إعلان الشريط العلوي (Slot ID)',
-    bottomBannerSlot: 'إعلان الشريط السفلي (Slot ID)',
-    sidebarSlot: 'إعلان الجانبي (Slot ID)',
-    saveSettings: 'حفظ الإعدادات',
-    featuredDoctors: 'إعلانات الأطباء المميزة (مستقبلي)',
-    featuredDesc: 'هذه الميزة ستُفعّل لاحقاً، وتتيح للأطباء شراء مساحة إعلانية مميزة داخل التطبيق.',
-    bronze: 'باقة برونزية',
-    silver: 'باقة فضية',
-    gold: 'باقة ذهبية',
-    perMonth: '/شهر',
-    bronzeDesc: 'ظهور في القائمة',
-    silverDesc: 'بانر مميز + أولوية',
-    goldDesc: 'أولوية قصوى + بروفايل مميز',
-    // Reports
-    completedCases: 'حالات مكتملة',
-    totalRevenue: 'إجمالي الإيرادات',
-    completionRate: 'نسبة الإكمال',
-    monthlyReport: 'تقرير شهري — أبريل 2026',
-    monthCol: 'الشهر',
-    newCasesCol: 'حالات جديدة',
-    offersSubmitted: 'عروض مقدمة',
-    completedCol: 'حالات مكتملة',
-    revenue: 'إيرادات',
-    // Settings
-    generalSettings: 'إعدادات عامة',
-    appName: 'اسم التطبيق',
-    supportEmail: 'البريد الإلكتروني للدعم',
-    defaultLang: 'اللغة الافتراضية',
-    arabicDefault: 'العربية (افتراضي)',
-    english: 'English',
-    bilingual: 'ثنائي اللغة (عربي/إنجليزي)',
-    securitySettings: 'إعدادات الأمان',
-    maxImageSize: 'الحد الأقصى لحجم الصورة (MB)',
-    autoReviewDoctors: 'مراجعة الأطباء الجدد تلقائياً',
-    autoAccept: 'نعم — قبول تلقائي',
-    manualReview: 'لا — يتطلب مراجعة يدوية',
-    save: 'حفظ',
-    // Data management
-    dataManagement: '🗑️ إدارة البيانات والحسابات',
-    dataManagementDesc: 'وفقاً لسياسات Google Play و App Store، يحق للمستخدمين طلب حذف بياناتهم.',
-    exportData: '📥 تصدير بياناتي',
-    deleteAccount: '🗑️ طلب حذف الحساب',
-    // Delete modal
-    deleteWarning: '⚠️ تحذير: هذا الإجراء نهائي ولا يمكن التراجع عنه',
-    deleteWhat: 'سيتم حذف ما يلي:',
-    deleteList: ['معلومات حسابك الشخصية', 'جميع صور الأسنان المرفوعة', 'سجل العروض والرسائل', 'التقييمات التي قدمتها'],
-    deleteTime: '⏱️ سيتم إتمام الحذف خلال 30 يوماً من الطلب. يمكنك التواصل معنا على support@smilebridge.com خلال هذه الفترة.',
-    confirmDelete: 'تأكيد الحذف 🗑️',
-    deleteRequested: 'تم استلام طلب حذف حسابك. سيتم الحذف خلال 30 يوماً.',
-    exportSuccess: 'تم تصدير بياناتك بنجاح 📥',
-    // Empty states
-    noPreviousCases: 'لا توجد حالات سابقة',
-    noPreviousCasesDesc: 'عند إكمال أي حالة علاجية، ستظهر هنا مع إمكانية تقييم الطبيب',
-    // Disclaimer
-    disclaimerTitle: '⚠️ إخلاء المسؤولية الطبية',
-    disclaimerPoints: [
-      'هذه المنصة هي أداة وساطة فقط لربط المرضى بالأطباء المتخصصين في تقويم الأسنان.',
-      'التشخيصات والعروض المقدمة عبر المنصة هي تشخيصات أولية وليست بديلاً عن الفحص السريري المباشر.',
-      'يجب على المريض استشارة الطبيب المختص شخصياً قبل اتخاذ أي قرار علاجي.',
-      'اللا تقدم نصائح طبية ولا تتحمل مسؤولية نتائج العلاج.',
-      'صور الأسنان المرفوعة تُستخدم فقط لأغراض التقييم الأولي من قبل أطباء مسجلين.'
-    ],
-    emergencyNote: '⚠️ إذا كنت تعاني من حالة طبية طارئة، يرجى التوجه لأقرب مركز طبي أو الاتصال بالطوارئ.',
-    agreeBtn: 'أوافق وأفهم ✅',
-    // Cookies
-    cookieTitle: '🍪 نستخدم ملفات تعريف الارتباط',
-    cookieText: 'نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على سياسة الخصوصية الخاصة بنا.',
-    privacyPolicy: 'سياسة الخصوصية',
-    reject: 'رفض',
-    acceptAll: 'قبول الكل ✅',
-    // Footer links
-    aboutUs: 'من نحن',
-    privacy: 'سياسة الخصوصية',
-    terms: 'سياسة الاستخدام',
-    allRights: '© 2026 SmileBridge — جميع الحقوق محفوظة',
-    // Ads
-    adLabel: 'إعلان',
-    adSupport: 'Google AdSense — يتم عرض إعلانات لدعم المنصة',
-    adSponsored: 'إعلان ممول',
-    // Welcome
-    welcome: (name) => `مرحباً ${name}! 👋`,
-    // Chat reviews
-    chatReviews: [
-      'دكتور ممتاز ومحترف، النتيجة فاقت توقعاتي!',
-      'تعامل راقي ومتابعة مستمرة، أنصح به بشدة',
-      'نتائج جيدة لكن المواعيد كانت متأخرة أحياناً',
-      'أفضل طبيب تقويم تعاملت معه، صبور ومتفهم',
-      'عمل احترافي وسعر مناسب، شكراً دكتور فيصل'
-    ],
-    timeAgo: ['منذ يوم', 'منذ 3 أيام', 'منذ أسبوع', 'منذ أسبوعين', 'منذ شهر'],
-    // Activity
-    activityItems: [
-      { icon: '👤', text: 'انضم طبيب جديد: د. خالد العمري', time: 'منذ 10 دقائق' },
-      { icon: '📋', text: 'تم نشر حالة جديدة من سارة م.', time: 'منذ 25 دقيقة' },
-      { icon: '✅', text: 'تم قبول عرض د. نوف لحالة أحمد', time: 'منذ ساعة' },
-      { icon: '⭐', text: 'تقييم جديد 5 نجوم لد. فيصل', time: 'منذ ساعتين' },
-      { icon: '💰', text: 'إيراد إعلاني جديد: $12.50', time: 'منذ 3 ساعات' },
-    ],
-  },
   en: {
     loginTitle: 'SmileBridge',
     loginSubtitle: 'Smart Dental Orthodontics Platform',
@@ -1724,6 +1458,273 @@ const translations = {
       { icon: '💰', text: 'New ad revenue: $12.50', time: '3 hours ago' },
     ],
   }
+  ar: {
+    // Login
+    loginTitle: 'سمايل بريدج',
+    loginSubtitle: 'SmileBridge — منصة تقويم الأسنان الذكية',
+    loginTab: 'تسجيل الدخول',
+    registerTab: 'حساب جديد',
+    email: 'البريد الإلكتروني',
+    password: 'كلمة المرور',
+    forgotPassword: 'Forgot Password? 🔑',
+    loginBtn: 'تسجيل الدخول ✨',
+    // Roles
+    patient: 'مريض',
+    doctor: 'طبيب',
+    admin: 'أدمن',
+    // Register
+    fullName: 'الاسم الكامل',
+    specialty: 'التخصص',
+    createAccount: 'إنشاء الحساب 🚀',
+    // Forgot
+    forgotTitle: 'استعادة كلمة المرور',
+    forgotDesc: 'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين',
+    sendReset: 'إرسال رابط الاستعادة 📧',
+    backToLogin: '← Back to Login',
+    // Reset
+    resetTitle: 'تعيين كلمة مرور جديدة',
+    resetDesc: 'أدخل كلمة المرور الجديدة',
+    newPassword: 'كلمة المرور الجديدة',
+    confirmPassword: 'تأكيد كلمة المرور',
+    setNewPassword: 'تعيين كلمة المرور ✅',
+    // Sidebar
+    dashboard: 'Dashboard',
+    myCases: 'My Cases',
+    uploadPhotos: 'Upload Photos',
+    offers: 'Received Offers',
+    messages: 'Messages',
+    history: 'Case History',
+    browseCases: 'Browse Cases',
+    myOffers: 'My Offers',
+    accepted: 'Accepted Cases',
+    ratings: 'Ratings',
+    users: 'User Management',
+    casesMgmt: 'Case Management',
+    adMgmt: 'Advertisements',
+    reports: 'Reports',
+    settings: 'Settings',
+    // Nav sections
+    navMain: 'رئيسي',
+    navServices: 'الخدمات',
+    navSystem: 'النظام',
+    // Header
+    search: 'بحث...',
+    notifications: 'الإشعارات',
+    // Dashboard
+    activeCases: 'Active Cases',
+    receivedOffers: 'Received Offers',
+    unreadMessages: 'Unread Messages',
+    myDoctorRating: 'تقييم طبيبي',
+    newThisWeek: '↑ 1 new this week',
+    newOffers: '↑ 3 new offers',
+    currentCases: 'Current Cases',
+    latestOffers: 'Latest Offers',
+    viewAll: 'View All',
+    uploadNewCase: '📸 رفع حالة جديدة',
+    // Cases
+    all: 'All',
+    active: 'نشطة',
+    inProgress: 'قيد العلاج',
+    completed: 'مكتملة',
+    new: 'New',
+    offersCount: 'عروض',
+    viewOffers: 'عرض العروض',
+    submitOffer: 'تقديم عرض',
+    // Upload
+    photoGuide: '📸 دليل التقاط الصور',
+    photoGuideDesc: 'التقط 6 صور بالزوايا المحددة أدناه للحصول على أفضل reviews من الأطباء',
+    photoSlots: ['Full Front Smile', 'Right Side — Lateral Bite', 'Left Side — Lateral Bite', 'Upper Arch (Top View)', 'Lower Arch (Bottom View)', 'Front with Open Mouth'],
+    caseDescription: 'Case Description (optional)',
+    casePlaceholder: 'Describe your issue briefly... Any details help the doctor understand your case better',
+    submitCaseBtn: 'Submit Case for Review 🚀',
+    saveDraft: 'Save as Draft',
+    uploadSuccess: 'Photo uploaded successfully! ✓',
+    caseSubmitted: 'Case submitted successfully! Doctors will be notified 🎉',
+    // Offers page
+    offersReceived: 'عروض من أطباء متخصصين',
+    sortByPrice: 'Price',
+    sortByRating: 'Rating',
+    sortByDuration: 'Duration',
+    bestPrice: '✅ Best Price',
+    selectDoctor: 'Select Doctor',
+    doctorSelected: (name) => `تم اختيار ${name} بنجاح! 🎉 سيتم التواصل معك قريباً`,
+    // Offer details
+    riyal: 'ريال',
+    month: 'شهر',
+    months: 'أشهر',
+    experience: 'سنوات خبرة',
+    review: 'تقييم',
+    reviews: 'تقييمات',
+    // Messages
+    searchConversations: 'Search conversations...',
+    online: 'Online now',
+    typeMessage: 'Type your message...',
+    // Doctor
+    availableCases: 'Available Cases',
+    newToday: '↑ 4 new today',
+    submittedOffers: 'My Submitted Offers',
+    myAcceptedCases: 'Accepted Cases',
+    thisMonth: '↑ 2 this month',
+    avgRating: 'Average Rating',
+    ratingCount: (n) => `من ${n} reviews`,
+    newCases: 'New Available Cases',
+    allAvailable: (n) => `الكل (${n})`,
+    newFilter: 'New',
+    complex: 'Complex',
+    urgent: 'Urgent',
+    crowding: 'Crowding',
+    overlay: 'Overcrowding',
+    pending: 'Pending',
+    acceptedOffer: 'مقبول ✓',
+    rejected: 'Rejected',
+    patientCase: 'حالة',
+    // Submit offer modal
+    submitOfferTitle: (id) => `تقديم عرض للحالة #${id}`,
+    priceRiyal: 'Price (SAR)',
+    pricePlaceholder: 'e.g. 3500',
+    durationMonths: 'Expected Treatment Duration (months)',
+    durationPlaceholder: 'e.g. 12',
+    additionalNote: 'Additional Note (optional)',
+    notePlaceholder: 'Add details about your proposed treatment plan...',
+    sendOffer: 'Send Offer 🚀',
+    cancel: 'Cancel',
+    offerSent: 'Offer sent successfully! ✅',
+    // Ratings
+    basedOn: (n) => `بناءً على ${n} reviews`,
+    // Admin
+    totalUsers: 'Total Users',
+    registeredDoctors: 'Registered Doctors',
+    totalCases: 'Total Cases',
+    adRevenue: 'Ad Revenue',
+    growthThisMonth: '↑ 12% this month',
+    newDoctors: '↑ 18 new',
+    thisWeek: '↑ 45 this week',
+    adRevenueThisMonth: '↑ 8% this month',
+    userGrowth: 'User Growth (Last 6 Months)',
+    recentActivity: 'Recent Activity',
+    months_ar: ['سبت', 'أكت', 'نوف', 'ديس', 'ينا', 'فبر'],
+    // Users table
+    user: 'User',
+    emailCol: 'Email',
+    role: 'Role',
+    status: 'Status',
+    joinDate: 'Join Date',
+    actions: 'Actions',
+    edit: 'تعديل',
+    block: 'حظر',
+    activeStatus: 'نشط',
+    pendingStatus: 'قيد المراجعة',
+    // Cases management
+    caseNumber: 'رقم',
+    patientCol: 'المريض',
+    description: 'الوصف',
+    offersCol: 'العروض',
+    statusCol: 'Status',
+    details: 'تفاصيل',
+    reported: 'مبلغ عنها',
+    // Ads
+    adsenseSettings: 'Google AdSense Settings',
+    publisherId: 'AdSense Publisher ID',
+    topBannerSlot: 'Top Banner (Slot ID)',
+    bottomBannerSlot: 'Bottom Banner (Slot ID)',
+    sidebarSlot: 'Sidebar Ad (Slot ID)',
+    saveSettings: 'حفظ الإعدادات',
+    featuredDoctors: 'Featured Doctor Ads (Coming Soon)',
+    featuredDesc: 'This feature will allow doctors to purchase premium ad placements within the app.',
+    bronze: 'Bronze Plan',
+    silver: 'Silver Plan',
+    gold: 'Gold Plan',
+    perMonth: '/month',
+    bronzeDesc: 'Listed in directory',
+    silverDesc: 'Featured banner + priority',
+    goldDesc: 'Top priority + premium profile',
+    // Reports
+    completedCases: 'Completed Cases',
+    totalRevenue: 'Total Revenue',
+    completionRate: 'Completion Rate',
+    monthlyReport: 'Monthly Report — April 2026',
+    monthCol: 'الشهر',
+    newCasesCol: 'حالات جديدة',
+    offersSubmitted: 'عروض مقدمة',
+    completedCol: 'Completed Cases',
+    revenue: 'إيرادات',
+    // Settings
+    generalSettings: 'General Settings',
+    appName: 'App Name',
+    supportEmail: 'Support Email',
+    defaultLang: 'Default Language',
+    arabicDefault: 'English (default)',
+    english: 'English',
+    bilingual: 'Bilingual (Arabic/English)',
+    securitySettings: 'Security Settings',
+    maxImageSize: 'Max Image Size (MB)',
+    autoReviewDoctors: 'Auto-review new doctors',
+    autoAccept: 'Yes — Auto accept',
+    manualReview: 'No — Manual review required',
+    save: 'حفظ',
+    // Data management
+    dataManagement: '🗑️ إدارة البيانات والحسابات',
+    dataManagementDesc: 'وفقاً لسياسات Google Play و App Store، يحق للمستخدمين طلب حذف بياناتهم.',
+    exportData: '📥 Export My Data',
+    deleteAccount: '🗑️ Request Account Deletion',
+    // Delete modal
+    deleteWarning: '⚠️ Warning: This action is permanent and cannot be undone',
+    deleteWhat: 'The following will be deleted:',
+    deleteList: ['Your personal account information', 'All uploaded dental photos', 'Offer and message history', 'Your submitted reviews'],
+    deleteTime: '⏱️ Deletion will be completed within 30 days. Contact us at support@smilebridge.com within this period.',
+    confirmDelete: 'Confirm Deletion 🗑️',
+    deleteRequested: 'Your deletion request has been received. It will be completed within 30 days.',
+    exportSuccess: 'Your data has been exported successfully 📥',
+    // Empty states
+    noPreviousCases: 'No previous cases',
+    noPreviousCasesDesc: 'عند إكمال أي حالة علاجية، ستظهر هنا مع إمكانية reviews الطبيب',
+    // Disclaimer
+    disclaimerTitle: '⚠️ إخلاء المسؤولية الطبية',
+    disclaimerPoints: [
+      'هذه المنصة هي أداة وساطة فقط لربط المرضى بالأطباء المتخصصين في تقويم الأسنان.',
+      'التشخيصات والعروض المقدمة عبر المنصة هي تشخيصات أولية وليست بديلاً عن الفحص السريري المباشر.',
+      'يجب على المريض استشارة الطبيب المختص شخصياً قبل اتخاذ أي قرار علاجي.',
+      'اللا تقدم نصائح طبية ولا تتحمل مسؤولية نتائج العلاج.',
+      'صور الأسنان المرفوعة تُستخدم فقط لأغراض التقييم الأولي من قبل أطباء مسجلين.'
+    ],
+    emergencyNote: '⚠️ If you are experiencing a medical emergency, please visit the nearest medical center or call emergency services.',
+    agreeBtn: 'أوافق وأفهم ✅',
+    // Cookies
+    cookieTitle: '🍪 نستخدم ملفات تعريف الارتباط',
+    cookieText: 'نستخدم الكوكيز وبيانات التحليلات لتحسين تجربتك وتقديم خدمات أفضل. بالموافقة، فإنك توافق على سياسة الخصوصية الخاصة بنا.',
+    privacyPolicy: 'سياسة الخصوصية',
+    reject: 'رفض',
+    acceptAll: 'قبول الكل ✅',
+    // Footer links
+    aboutUs: 'من نحن',
+    privacy: 'سياسة الخصوصية',
+    terms: 'Terms of Service',
+    allRights: '© 2026 SmileBridge — All rights reserved',
+    // Ads
+    adLabel: 'إعلان',
+    adSupport: 'Google AdSense — يتم عرض إعلانات لدعم المنصة',
+    adSponsored: 'إعلان ممول',
+    // Welcome
+    welcome: (name) => `مرحباً ${name}! 👋`,
+    // Chat reviews
+    chatReviews: [
+      'Excellent and professional doctor, results exceeded my expectations!',
+      'Great service and continuous follow-up, highly recommend',
+      'Good results but appointments were sometimes delayed',
+      'Best orthodontist I\'ve dealt with, patient and understanding',
+      'Professional work at a fair price, thank you Dr. Faisal'
+    ],
+    timeAgo: ['منذ يوم', 'منذ 3 أيام', 'منذ أسبوع', 'منذ أسبوعين', 'منذ شهر'],
+    // Activity
+    activityItems: [
+      { icon: '👤', text: 'New doctor joined: Dr. Khalid Al-Omari', time: '10 min ago' },
+      { icon: '📋', text: 'New case posted by Sara M.', time: '25 min ago' },
+      { icon: '✅', text: 'Dr. Nouf\'s offer accepted for Ahmed\'s case', time: '1 hour ago' },
+      { icon: '⭐', text: 'New 5-star review for Dr. Faisal', time: '2 hours ago' },
+      { icon: '💰', text: 'New ad revenue: $12.50', time: '3 hours ago' },
+    ],
+  },
+
 };
 
 function t(key) {
@@ -1736,7 +1737,7 @@ function t(key) {
 const state = {
   currentRole: 'patient',
   currentPage: 'dashboard',
-  lang: 'ar',
+  lang: 'en',
   theme: 'light',
   user: null,
   selectedCase: null,
@@ -1745,57 +1746,57 @@ const state = {
 // ==================== MOCK DATA ====================
 const mockCases = [
   {
-    id: 1, patient: 'سارة محمد', date: 'منذ 3 أيام', status: 'new',
-    desc: 'تراكب في الأسنان الأمامية العلوية مع وجود فراغات بين الأسنان الجانبية. أبحث عن حل تقويمي شفاف.',
+    id: 1, patient: 'Sarah Mohamed', date: 'منذ 3 أيام', status: 'new',
+    desc: 'Overcrowding in upper front teeth with gaps between lateral teeth. Looking for a clear aligner solution.',
     images: ['😁','🦷','📸','👄','🪥','😁'],
-    offers: 4, badges: ['تراكب', 'فراغات', 'عاجل'],
+    offers: 4, badges: ['Overcrowding', 'Gaps', 'Urgent'],
   },
   {
-    id: 2, patient: 'أحمد علي', date: 'منذ 5 أيام', status: 'new',
-    desc: 'إطباق خاطئ في الفك السفلي مع انزياح خط المنتصف. أفضّل التقويم الشفاف.',
+    id: 2, patient: 'Ahmed Ali', date: 'منذ 5 أيام', status: 'new',
+    desc: 'Malocclusion in lower jaw with midline deviation. Prefer clear braces.',
     images: ['😁','🦷','📸','👄','🪥','😁'],
-    offers: 2, badges: ['إطباق', 'انزياح'],
+    offers: 2, badges: ['Malocclusion', 'Deviation'],
   },
   {
-    id: 3, patient: 'نورة سعيد', date: 'منذ أسبوع', status: 'in_progress',
-    desc: 'ازدحام شديد في الأسنان السفلية مع وجود ناب مطمور جزئياً.',
+    id: 3, patient: 'Noura Saeed', date: 'منذ أسبوع', status: 'in_progress',
+    desc: 'Severe crowding in lower teeth with a partially impacted canine.',
     images: ['😁','🦷','📸','👄','🪥','😁'],
-    offers: 6, badges: ['ازدحام', 'ناب مطمور', 'معقد'],
+    offers: 6, badges: ['Crowding', 'Impacted Canine', 'Complex'],
   },
   {
-    id: 4, patient: 'خالد العمري', date: 'منذ يومين', status: 'new',
-    desc: 'تقدم الفك العلوي مع وجود عضة عميقة. العمر 24 سنة.',
+    id: 4, patient: 'Khalid Al-Omari', date: 'منذ يومين', status: 'new',
+    desc: 'Upper jaw protrusion with deep bite. Age 24.',
     images: ['😁','🦷','📸','👄','🪥','😁'],
-    offers: 3, badges: ['تقدم فك', 'عضة عميقة'],
+    offers: 3, badges: ['Jaw Protrusion', 'Deep Bite'],
   },
 ];
 
 const mockOffers = [
-  { doctor: 'د. فيصل الحمدان', spec: 'تقويم أسنان — 12 سنة خبرة', rating: 4.8, reviews: 156, price: '3,500', duration: '14 شهر', note: 'أستخدم أحدث تقنيات التقويم الشفاف مع متابعة شهرية.' },
-  { doctor: 'د. نوف العتيبي', spec: 'تقويم أسنان — 8 سنوات خبرة', rating: 4.9, reviews: 98, price: '4,200', duration: '12 شهر', note: 'خطة علاج متكاملة مع صور أشعة panoramix مجانية.' },
-  { doctor: 'د. سلطان الشهري', spec: 'تقويم أسنان — 15 سنة خبرة', rating: 4.6, reviews: 230, price: '2,800', duration: '18 شهر', note: 'سعر شامل المتابعات. دفعة أولى 1000 ريال فقط.' },
+  { doctor: 'Dr. Faisal Al-Hamdan', spec: 'Orthodontics — 12 years experience', rating: 4.8, reviews: 156, price: '3,500', duration: '14 شهر', note: 'I use the latest clear aligner techniques with monthly follow-ups.' },
+  { doctor: 'Dr. Nouf Al-Otaibi', spec: 'Orthodontics — 8 years experience', rating: 4.9, reviews: 98, price: '4,200', duration: '12 شهر', note: 'Comprehensive treatment plan with free panoramic X-rays.' },
+  { doctor: 'Dr. Sultan Al-Shahrani', spec: 'Orthodontics — 15 years experience', rating: 4.6, reviews: 230, price: '2,800', duration: '18 شهر', note: 'Price includes all follow-ups. Only 1000 SAR down payment.' },
 ];
 
 const mockMessages = [
-  { id: 1, name: 'د. فيصل الحمدان', lastMsg: 'تمام، موعد المتابعة الخميس الجاي', time: '10:30', unread: 2, avatar: 'ف' },
-  { id: 2, name: 'د. نوف العتيبي', lastMsg: 'تم إرسال خطة العلاج', time: 'أمس', unread: 0, avatar: 'ن' },
-  { id: 3, name: 'سارة محمد', lastMsg: 'شكراً جزيلاً دكتور!', time: 'أمس', unread: 1, avatar: 'س' },
+  { id: 1, name: 'Dr. Faisal Al-Hamdan', lastMsg: 'Sure, follow-up appointment next Thursday', time: '10:30', unread: 2, avatar: 'ف' },
+  { id: 2, name: 'Dr. Nouf Al-Otaibi', lastMsg: 'Treatment plan sent', time: 'أمس', unread: 0, avatar: 'ن' },
+  { id: 3, name: 'Sarah Mohamed', lastMsg: 'Thank you so much doctor!', time: 'أمس', unread: 1, avatar: 'س' },
 ];
 
 const mockChatMessages = [
-  { text: 'السلام عليكم دكتور، شكراً على قبولكم حالتي', sent: true, time: '10:15' },
-  { text: 'وعليكم السلام، أهلاً وسهلاً. اطلعت على الصور والوضع مناسب للتقويم الشفاف 👍', sent: false, time: '10:18' },
-  { text: 'هل المدة المتوقعة 14 شهر فعلاً؟', sent: true, time: '10:20' },
-  { text: 'تقريباً نعم، لكن نراجع كل شهر ونشوف التقدم. ممكن تقل أو تزيد شوي حسب الاستجابة', sent: false, time: '10:25' },
-  { text: 'تمام، موعد المتابعة الخميس الجاي', sent: false, time: '10:30' },
+  { text: 'Hello doctor, thank you for accepting my case', sent: true, time: '10:15' },
+  { text: 'Hello, welcome. I reviewed the photos and the condition is suitable for clear aligners 👍', sent: false, time: '10:18' },
+  { text: 'Is the expected duration really 14 months?', sent: true, time: '10:20' },
+  { text: 'Approximately yes, but we review monthly and check progress. It may be slightly less or more depending on response', sent: false, time: '10:25' },
+  { text: 'Sure, follow-up appointment next Thursday', sent: false, time: '10:30' },
 ];
 
 const mockUsers = [
-  { name: 'محمد أحمد', email: 'mohamed@mail.com', role: 'مريض', status: 'نشط', date: '2024-01-15' },
-  { name: 'سارة محمد', email: 'sara@mail.com', role: 'مريض', status: 'نشط', date: '2024-02-20' },
-  { name: 'د. فيصل الحمدان', email: 'faisal@clinic.com', role: 'طبيب', status: 'نشط', date: '2024-01-10' },
-  { name: 'د. نوف العتيبي', email: 'nouf@clinic.com', role: 'طبيب', status: 'قيد المراجعة', date: '2024-03-01' },
-  { name: 'أحمد علي', email: 'ahmed@mail.com', role: 'مريض', status: 'نشط', date: '2024-03-05' },
+  { name: 'Mohamed Ahmed', email: 'mohamed@mail.com', role: 'Patient', status: 'Active', date: '2024-01-15' },
+  { name: 'Sarah Mohamed', email: 'sara@mail.com', role: 'Patient', status: 'Active', date: '2024-02-20' },
+  { name: 'Dr. Faisal Al-Hamdan', email: 'faisal@clinic.com', role: 'Doctor', status: 'Active', date: '2024-01-10' },
+  { name: 'Dr. Nouf Al-Otaibi', email: 'nouf@clinic.com', role: 'Doctor', status: 'Pending Review', date: '2024-03-01' },
+  { name: 'Ahmed Ali', email: 'ahmed@mail.com', role: 'Patient', status: 'Active', date: '2024-03-05' },
 ];
 
 // ==================== NAV CONFIG ====================
@@ -1855,10 +1856,10 @@ function switchLoginTab(tab) {
 function handleForgotPassword() {
   const email = document.getElementById('forgotEmail').value.trim();
   if (!email) {
-    showToast('error', 'الرجاء إدخال البريد الإلكتروني');
+    showToast('error', 'Please enter your email');
     return;
   }
-  showToast('success', 'تم إرسال رابط الاستعادة إلى بريدك الإلكتروني 📧');
+  showToast('success', 'Reset link sent to your email 📧');
   // Simulate: after "clicking email link", show reset form
   setTimeout(() => switchLoginTab('reset'), 2000);
 }
@@ -1867,18 +1868,18 @@ function handleResetPassword() {
   const pass = document.getElementById('newPassword').value;
   const confirm = document.getElementById('confirmPassword').value;
   if (!pass || !confirm) {
-    showToast('error', 'الرجاء ملء جميع الحقول');
+    showToast('error', 'Please fill in all fields');
     return;
   }
   if (pass !== confirm) {
-    showToast('error', 'كلمتا المرور غير متطابقتين ❌');
+    showToast('error', 'Passwords do not match ❌');
     return;
   }
   if (pass.length < 6) {
-    showToast('error', 'كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+    showToast('error', 'Password must be at least 6 characters');
     return;
   }
-  showToast('success', 'تم تعيين كلمة المرور الجديدة بنجاح! 🎉');
+  showToast('success', 'New password set successfully! 🎉');
   setTimeout(() => switchLoginTab('login'), 1500);
 }
 
@@ -1889,9 +1890,9 @@ function selectRole(role) {
 }
 
 function handleLogin() {
-  const roleLabels = { patient: t('patient'), doctor: t('doctor'), admin: t('admin') };
-  const names = { patient: state.lang === 'ar' ? 'محمد أحمد' : 'Mohamed Ahmed', doctor: state.lang === 'ar' ? 'د. فيصل الحمدان' : 'Dr. Faisal Al-Hamdan', admin: state.lang === 'ar' ? 'المشرف العام' : 'Super Admin' };
-  const avatarLetters = { patient: state.lang === 'ar' ? 'م' : 'M', doctor: state.lang === 'ar' ? 'ف' : 'F', admin: state.lang === 'ar' ? 'أ' : 'A' };
+  const roleLabels = { patient: 'Patient', doctor: 'Doctor', admin: 'Admin' };
+  const names = { patient: 'Mohamed Ahmed', doctor: 'Dr. Faisal Al-Hamdan', admin: 'Super Admin' };
+  const avatarLetters = { patient: 'M', doctor: 'F', admin: 'A' };
   const avatarClasses = { patient: 'avatar-patient', doctor: 'avatar-doctor', admin: 'avatar-admin' };
 
   state.user = { name: names[state.currentRole], role: state.currentRole };
@@ -2098,7 +2099,7 @@ function renderOffers() {
       <div class="flex-between">
         <div>
           <h3 style="font-size: 16px; font-weight: 700;">عرض: تراكب الأسنان الأمامية</h3>
-          <p style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">تم استلام ${mockOffers.length} عروض من أطباء متخصصين</p>
+          <p style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">تم استلام ${mockOffers.length} offers from specialists</p>
         </div>
         <div class="flex gap-8">
           <div class="filter-chip active">السعر</div>
@@ -2118,7 +2119,7 @@ function renderHistory() {
     <div class="empty-state">
       <div class="empty-icon">📁</div>
       <div class="empty-title">لا توجد حالات سابقة</div>
-      <div class="empty-desc">عند إكمال أي حالة علاجية، ستظهر هنا مع إمكانية تقييم الطبيب</div>
+      <div class="empty-desc">عند إكمال أي حالة علاجية، ستظهر هنا مع إمكانية reviews الطبيب</div>
     </div>
   `;
 }
@@ -2155,7 +2156,7 @@ function renderDoctorDashboard() {
         <div class="stat-info">
           <div class="stat-value">4.8</div>
           <div class="stat-label">متوسط التقييم</div>
-          <div class="stat-change up">من 156 تقييم</div>
+          <div class="stat-change up">من 156 reviews</div>
         </div>
       </div>
     </div>
@@ -2203,18 +2204,18 @@ function renderMyOffers() {
               <div class="doctor-name">حالة: ${mockCases[i]?.patient || 'سارة محمد'}</div>
               <div class="doctor-spec">${mockCases[i]?.desc?.substring(0, 60) || ''}...</div>
               <div class="badge ${i === 0 ? 'badge-warning' : i === 1 ? 'badge-success' : 'badge-primary'}" style="margin-top:6px;">
-                ${i === 0 ? 'قيد الانتظار' : i === 1 ? 'مقبول ✓' : 'قيد الانتظار'}
+                ${i === 0 ? 'Pending' : i === 1 ? 'مقبول ✓' : 'Pending'}
               </div>
             </div>
           </div>
           <div class="offer-details">
             <div class="offer-detail">
               <div class="detail-value">${o.price}</div>
-              <div class="detail-label">ريال</div>
+              <div class="detail-label">SAR</div>
             </div>
             <div class="offer-detail">
               <div class="detail-value">${o.duration.split(' ')[0]}</div>
-              <div class="detail-label">شهر</div>
+              <div class="detail-label">months</div>
             </div>
           </div>
         </div>
@@ -2236,20 +2237,20 @@ function renderRatings() {
     <div class="card card-body mb-24 text-center">
       <div style="font-size: 56px; font-weight: 900; color: var(--warning);">4.8</div>
       <div class="stars mt-8">${renderStars(4.8)}</div>
-      <div style="color: var(--text-secondary); margin-top: 8px;">بناءً على 156 تقييم</div>
+      <div style="color: var(--text-secondary); margin-top: 8px;">بناءً على 156 reviews</div>
     </div>
     <div class="offers-list">
       ${[5,5,4,5,4].map((r, i) => `
         <div class="offer-card">
-          <div class="avatar avatar-patient">${['م','س','أ','ن','خ'][i]}</div>
+          <div class="avatar avatar-patient">${['M','S','A','N','K'][i]}</div>
           <div style="flex:1;">
             <div class="flex-between mb-8">
-              <strong>${['محمد أحمد','سارة محمد','أحمد علي','نورة سعيد','خالد العمري'][i]}</strong>
+              <strong>${['Mohamed Ahmed','Sarah Mohamed','Ahmed Ali','Noura Saeed','Khalid Al-Omari'][i]}</strong>
               <span style="font-size: 12px; color: var(--text-muted);">${['منذ يوم','منذ 3 أيام','منذ أسبوع','منذ أسبوعين','منذ شهر'][i]}</span>
             </div>
             <div class="stars">${renderStars(r)}</div>
             <p style="font-size: 14px; color: var(--text-secondary); margin-top: 8px;">
-              ${['دكتور ممتاز ومحترف، النتيجة فاقت توقعاتي!','تعامل راقي ومتابعة مستمرة، أنصح به بشدة','نتائج جيدة لكن المواعيد كانت متأخرة أحياناً','أفضل طبيب تقويم تعاملت معه، صبور ومتفهم','عمل احترافي وسعر مناسب، شكراً دكتور فيصل'][i]}
+              ${['Excellent and professional doctor, results exceeded my expectations!','Great service and continuous follow-up, highly recommend','Good results but appointments were sometimes delayed','Best orthodontist I\'ve dealt with, patient and understanding','Professional work at a fair price, thank you Dr. Faisal'][i]}
             </p>
           </div>
         </div>
@@ -2304,7 +2305,7 @@ function renderAdminDashboard() {
             ${[40, 55, 45, 70, 60, 85].map((h, i) => `
               <div style="flex:1; display: flex; flex-direction: column; align-items: center; gap: 4px;">
                 <div style="width: 100%; height: ${h}%; background: linear-gradient(to top, var(--primary), var(--primary-light)); border-radius: 6px 6px 0 0; transition: height 0.5s;"></div>
-                <span style="font-size: 11px; color: var(--text-muted);">${['سبت','أكت','نوف','ديس','ينا','فبر'][i]}</span>
+                <span style="font-size: 11px; color: var(--text-muted);">${['Sep','Oct','Nov','Dec','Jan','Feb'][i]}</span>
               </div>
             `).join('')}
           </div>
@@ -2315,11 +2316,11 @@ function renderAdminDashboard() {
           <h3 class="section-title mb-16">آخر النشاطات</h3>
           <div class="flex-col gap-12">
             ${[
-              { icon: '👤', text: 'انضم طبيب جديد: د. خالد العمري', time: 'منذ 10 دقائق' },
-              { icon: '📋', text: 'تم نشر حالة جديدة من سارة م.', time: 'منذ 25 دقيقة' },
-              { icon: '✅', text: 'تم قبول عرض د. نوف لحالة أحمد', time: 'منذ ساعة' },
-              { icon: '⭐', text: 'تقييم جديد 5 نجوم لد. فيصل', time: 'منذ ساعتين' },
-              { icon: '💰', text: 'إيراد إعلاني جديد: $12.50', time: 'منذ 3 ساعات' },
+              { icon: '👤', text: 'New doctor joined: Dr. Khalid Al-Omari', time: '10 min ago' },
+              { icon: '📋', text: 'New case posted by Sara M.', time: '25 min ago' },
+              { icon: '✅', text: 'Dr. Nouf\'s offer accepted for Ahmed\'s case', time: '1 hour ago' },
+              { icon: '⭐', text: 'New 5-star review for Dr. Faisal', time: '2 hours ago' },
+              { icon: '💰', text: 'New ad revenue: $12.50', time: '3 hours ago' },
             ].map(a => `
               <div class="flex gap-12" style="align-items: center;">
                 <span style="font-size: 20px;">${a.icon}</span>
@@ -2359,11 +2360,11 @@ function renderUsers() {
         ${mockUsers.map(u => `
           <tr>
             <td><div class="flex gap-8" style="align-items:center;">
-              <div class="avatar avatar-sm ${u.role === 'طبيب' ? 'avatar-doctor' : 'avatar-patient'}">${u.name[0]}</div>
+              <div class="avatar avatar-sm ${u.role === 'Doctor' ? 'avatar-doctor' : 'avatar-patient'}">${u.name[0]}</div>
               <strong>${u.name}</strong>
             </div></td>
             <td style="color: var(--text-secondary);">${u.email}</td>
-            <td><span class="badge ${u.role === 'طبيب' ? 'badge-primary' : 'badge-success'}">${u.role}</span></td>
+            <td><span class="badge ${u.role === 'Doctor' ? 'badge-primary' : 'badge-success'}">${u.role}</span></td>
             <td><span class="badge ${u.status === 'نشط' ? 'badge-success' : 'badge-warning'}">${u.status}</span></td>
             <td style="color: var(--text-muted);">${u.date}</td>
             <td>
@@ -2398,8 +2399,8 @@ function renderCasesMgmt() {
             <td>#${c.id}</td>
             <td><strong>${c.patient}</strong></td>
             <td style="max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color: var(--text-secondary);">${c.desc}</td>
-            <td><span class="badge badge-primary">${c.offers} عروض</span></td>
-            <td><span class="badge ${c.status === 'new' ? 'badge-success' : 'badge-warning'}">${c.status === 'new' ? 'جديدة' : 'نشطة'}</span></td>
+            <td><span class="badge badge-primary">${c.offers} offers</span></td>
+            <td><span class="badge ${c.status === 'new' ? 'badge-success' : 'badge-warning'}">${c.status === 'new' ? 'New' : 'Active'}</span></td>
             <td><button class="btn btn-secondary btn-sm">تفاصيل</button></td>
           </tr>
         `).join('')}
@@ -2554,7 +2555,7 @@ function renderCaseCard(c, showOfferBtn) {
             <div class="case-date">${c.date}</div>
           </div>
           <span class="badge ${c.status === 'new' ? 'badge-success' : 'badge-warning'}" style="margin-${state.lang === 'ar' ? 'right' : 'left'}: auto;">
-            ${c.status === 'new' ? 'جديدة' : 'نشطة'}
+            ${c.status === 'new' ? 'New' : 'Active'}
           </span>
         </div>
         <div class="case-badges">
@@ -2563,7 +2564,7 @@ function renderCaseCard(c, showOfferBtn) {
         <p class="case-desc">${c.desc}</p>
         <div class="case-footer">
           <div class="case-offers">
-            <strong>${c.offers}</strong> عروض
+            <strong>${c.offers}</strong> Offers
           </div>
           ${showOfferBtn
             ? `<button class="btn btn-primary btn-sm" onclick="openOfferModal(${c.id})">تقديم عرض</button>`
@@ -2585,22 +2586,22 @@ function renderOfferCard(o, selected) {
           <div class="doctor-spec">${o.spec}</div>
           <div class="doctor-rating">
             <span class="stars">${renderStars(o.rating)}</span>
-            <span style="font-size: 13px; color: var(--text-secondary);">${o.rating} (${o.reviews} تقييم)</span>
+            <span style="font-size: 13px; color: var(--text-secondary);">${o.rating} (${o.reviews} reviews)</span>
           </div>
         </div>
       </div>
       <div class="offer-details">
         <div class="offer-detail">
           <div class="detail-value">${o.price}</div>
-          <div class="detail-label">ريال</div>
+          <div class="detail-label">SAR</div>
         </div>
         <div class="offer-detail">
           <div class="detail-value">${o.duration.split(' ')[0]}</div>
-          <div class="detail-label">شهر</div>
+          <div class="detail-label">months</div>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
-        ${selected ? '<span class="badge badge-success" style="align-self: flex-start;">✅ الأفضل سعراً</span>' : ''}
+        ${selected ? '<span class="badge badge-success" style="align-self: flex-start;">✅ Best Price</span>' : ''}
         <button class="btn btn-primary btn-sm" onclick="acceptOffer('${o.doctor}')">اختيار الطبيب</button>
       </div>
     </div>
@@ -2683,7 +2684,7 @@ function submitCase() {
 }
 
 function acceptOffer(doctor) {
-  showToast('success', `تم اختيار ${doctor} بنجاح! 🎉 سيتم التواصل معك قريباً`);
+  showToast('success', `${doctor} selected! 🎉 We'll contact you soon`);
 }
 
 function openOfferModal(caseId) {
@@ -2717,7 +2718,7 @@ function openOfferModal(caseId) {
 
 function submitOffer() {
   closeModal();
-  showToast('success', 'تم إرسال العرض بنجاح! ✅');
+  showToast('success', 'Offer sent successfully! ✅');
 }
 
 function closeModal(e) {
@@ -2927,7 +2928,7 @@ function exportUserData() {
   const a = document.createElement('a');
   a.href = url; a.download = 'smilebridge-my-data.json'; a.click();
   URL.revokeObjectURL(url);
-  showToast('success', 'تم تصدير بياناتك بنجاح 📥');
+  showToast('success', 'Your data has been exported successfully 📥');
 }
 
 function confirmDeleteAccount() {
@@ -2962,7 +2963,7 @@ function confirmDeleteAccount() {
 
 function executeDeleteAccount() {
   closeModal();
-  showToast('success', 'تم استلام طلب حذف حسابك. سيتم الحذف خلال 30 يوماً.');
+  showToast('success', 'Your deletion request has been received. It will be completed within 30 days.');
   setTimeout(() => handleLogout(), 3000);
 }
 </script>
