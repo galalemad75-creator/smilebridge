@@ -1145,13 +1145,16 @@ html[dir="ltr"] .toast.error { border-right: none; border-left: 4px solid var(--
       <!-- Dynamic based on role -->
     </nav>
     <div class="sidebar-footer">
-      <div class="sidebar-user" onclick="handleLogout()">
+      <div class="sidebar-user">
         <div class="avatar avatar-patient" id="sidebarAvatar">M</div>
         <div class="user-info">
           <div class="user-name" id="sidebarUserName">Mohamed Ahmed</div>
           <div class="user-role" id="sidebarUserRole">Patient</div>
         </div>
       </div>
+      <button class="btn btn-secondary" style="width:100%; margin-top: 10px;" onclick="handleLogout()">
+        🚪 Logout
+      </button>
     </div>
   </aside>
 
